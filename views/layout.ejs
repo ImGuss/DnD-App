@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/navbar-login.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<header>
+<!-- begin nav bar -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Dungeons and Dragons</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="/characters">Your Characters</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">New Character <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/characters/new/e">New Character</a></li>
+            <li><a href="/characters/new/">New Character (Beta)</a></li>
+          </ul>
+        </li>
+      </ul> <!-- end nav navbar-nav -->
+
+      <!-- roll 20 button -->
+        <button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-target="#roll20">Roll 20</button>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/signup">Sign Up</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+          <ul id="login-dp" class="dropdown-menu">
+            <li>
+              <div class="row">
+                <div class="col-md-12">
+                  Login via
+                  <div class="social-buttons">
+                    <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                  </div>
+                  or
+                  <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputPassword2">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                      <div class="help-block text-right"><a href="">Forget your password?</a></div>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> keep me logged-in
+                      </label>
+                    </div>
+                  </form> <!-- end form -->
+                  <div class="bottom text-center">
+                    New here ? <a href="/signup"><b>Join Us</b></a>
+                  </div>
+                </div> <!-- end column -->
+              </div> <!-- end row -->
+            </li>
+          </ul> <!-- end login dropdown -->
+        </li> <!-- end dropdown -->
+      </ul> <!-- end right navbar-->
+    </div><!-- end navbar-collapse -->
+  </div><!-- end container-fluid -->
+</nav> <!-- end nav bar -->
+</header> <!-- end header -->
+
+
+  <%- body %>
+
+
+
+  <!-- Roll 20 Modal -->
+<div id="roll20" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title center">Roll Some Dice</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+
+          <div class="col-sm-6">
+            <input id="dice-type" class="form-control" aria-describedby="basic-addon1" type="number" name="diceType" placeholder="Type of dice... e.g. D20, D10, etc.">
+          </div>  <!-- end column -->
+
+          <div class="col-sm-6">
+            <div class="input-group">
+              <input id="dice-count" class="form-control" aria-describedby="basic-addon1" type="number" name="diceCount" placeholder="How many dice...">
+              <span class="input-group-btn">
+                <button id="roll-button" type="button" class="btn btn-success">Roll!</button>
+              </span>
+            </div> <!-- end input -->
+          </div> <!-- end column -->
+        </div> <!-- end row -->
+
+        <div class="row top-margin-25">
+          <div class="col-sm-12">
+            <div class="panel panel-default">
+              <div id="roll-total" class="panel-body center"></div>
+            </div>
+          </div> <!-- end column -->
+        </div> <!-- end row -->
+      </div> <!-- end modal body -->
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> <!-- end modal-footer -->
+    </div> <!-- end modal-content -->
+
+  </div>
+</div> <!-- end modal -->
+
+
+  <footer class="footer">
+    Made with <span style="color: red">&hearts;</span> by Guss
+  </footer>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="assets/twitterbootstrap/js/bootstrap-tab.js"></script>
+  <script type="text/javascript" src="/javascript/dice-roller.js"></script>
+</body>
+</html>

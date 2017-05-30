@@ -1,0 +1,255 @@
+<div class="container">
+
+  <div class="row top-margin-50">
+
+
+    <div class="col-sm-4">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Character Info</h3>
+        </div> <!-- end panel heading -->
+        <div class="panel-body">
+          <p>Coolio</p>
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+    </div> <!-- end column -->
+
+    <div class="col-sm-8">
+      <div class="panel panel-default">
+        <ul class="nav nav-tabs nav-justified">
+          <li><a href="#Home" data-toggle="tab">Home</a></li>
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              Ability
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#point-buy" data-toggle="tab">Point Buy</a></li>
+              <li><a href="#roll" data-toggle="tab">Roll</a></li>
+              <li><a href="#" data-toggle="tab">Blah</a></li>
+            </ul>
+          </li>
+          <li><a href="#About" data-toggle="tab">About</a></li>
+          <li><a href="#equip" data-toggle="tab">Equipment</a></li>
+        </ul>
+
+        <div class="tab-content">
+
+          <div class="tab-pane fade active in" id="Home">
+            <div class="panel-body">
+              <!-- character's first name input -->
+              <label for="character-first-name-input">First Name</label>
+              <input id="character-first-name-input" class="form-control" type="text" name="characterFirstNameInput">
+
+              <!-- character's last name input -->
+              <label for="character-last-name-input">Last Name</label>
+              <input id="character-last-name-input" class="form-control" type="text" name="characterLastNameInput">
+
+              <div class="row top-margin-15">
+                <div class="col-sm-6">
+
+                  <!-- character's race input -->
+                  <label for="race-input">Race</label>
+                  <select id="race-input" class="form-control" name="raceInput">
+                    <option value="aarakocra">Aarakocra</option>
+                    <option value="aasimar">Aasimar</option>
+                    <option value="anthroMice">Anthropomorphic Mice</option>
+                    <option value="changeling">Changeling</option>
+                    <option value="deepGnome">Deep Gnome</option>
+                    <option value="dragonborn">Dragonborn</option>
+                    <option value="dwarf">Dwarf</option>
+                    <option value="elf">Elf</option>
+                    <option value="firbolg">Firbolg</option>
+                    <option value="genasi">Genasi</option>
+                    <option value="gnome">Gnome</option>
+                    <option value="goblin">Goblin</option>
+                    <option value="goliath">Goliath</option>
+                    <option value="halfling">Halfling</option>
+                    <option value="halfElf">Half-Elf</option>
+                    <option value="halfOrc">Half-Orc</option>
+                    <option value="hobgoblin">Hobgoblin</option>
+                    <option value="human">Human</option>
+                    <option value="kenku">Kenku</option>
+                    <option value="kobold">Kobold</option>
+                    <option value="kor">Kor</option>
+                    <option value="lizardFolk">Lizardfolk</option>
+                    <option value="merfolk">Merfolk</option>
+                    <option value="minotaur">Minotaur</option>
+                    <option value="orc">Orc</option>
+                    <option value="revenant">Revenant</option>
+                    <option value="shifter">Shifter</option>
+                    <option value="tabaxi">Tabaxi</option>
+                    <option value="tiefling">Tiefling</option>
+                    <option value="triton">Triton</option>
+                    <option value="vampire">Vampire</option>
+                    <option value="warforged">Warforged</option>
+                    <option value="yuantiPureblodd">Yuan-Ti Pureblood</option>
+                  </select>
+                </div> <!-- end 1st top panel column -->
+
+                <div class="col-sm-6">
+
+                  <!-- character's class input -->
+                  <label for="class-input">Class</label>
+                  <select id="class-input" class="form-control" type="text" name="classInput">
+                    <option value="barbarian">Barbarian</option>
+                    <option value="bard">Bard</option>
+                    <option value="cleric">Cleric</option>
+                    <option value="druid">Druid</option>
+                    <option value="fighter">Fighter</option>
+                    <option value="monk">Monk</option>
+                    <option value="paladin">Paladin</option>
+                    <option value="ranger">Ranger</option>
+                    <option value="rogue">Rogue</option>
+                    <option value="sorcerer">Sorcerer</option>
+                    <option value="warlock">Warlock</option>
+                    <option value="wizard">Wizard</option>
+                  </select>
+                </div> <!-- end 2nd top panel column -->
+              </div> <!-- end top row -->
+
+              <div class="row top-margin-15">
+                <div class="col-sm-6">
+
+                  <!-- characters background input -->
+                  <label for="background-input">Background</label>
+                  <select id="background-input" class="form-control" type="text" name="backgroundInput">
+                    <option value="acolyte">Acolyte</option>
+                    <option value="charlatan">Charlatan</option>
+                    <option value="criminal">Criminal</option>
+                    <option value="entertainer">Entertainer</option>
+                    <option value="folkHero">Folk Hero</option>
+                    <option value="guildArtisan">Guild Artisan</option>
+                    <option value="hermit">Hermit</option>
+                    <option value="noble">Noble</option>
+                    <option value="outlander">Outlander</option>
+                    <option value="sage">Sage</option>
+                    <option value="sailor">Sailor</option>
+                    <option value="soldier">Soldier</option>
+                    <option value="urchin">Urchin</option>
+                  </select>
+                </div> <!-- end 1st bottom panel column -->
+
+                <div class="col-sm-6">
+
+                  <!-- character's alignment input -->
+                  <label for="">Alignment</label>
+                  <select id="" class="form-control" name="alignmentInput">
+                    <option value="Lawful-Good">Lawful Good</option>
+                    <option value="Neutral-Good">Neutral Good</option>
+                    <option value="Chaotic-Good">Chaotic Good</option>
+                    <option value="Lawful-Neutral">Lawful Neutral</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Chaotic-Neutral">Chaotic Neutral</option>
+                    <option value="Lawful-Evil">Lawful Evil</option>
+                    <option value="Neutral-Evil">Neutral Evil</option>
+                    <option value="Chaotic-Evil">Chaotic Evil</option>
+                  </select>
+                </div> <!-- end 2nd bottom panel column -->
+              </div> <!-- end bottom row -->
+            </div><!-- end panel body -->
+          </div><!-- end tab pane -->
+
+
+          <!-- ability point-buy -->
+          <div class="tab-pane fade" id="point-buy">
+            <div class="panel-body">
+              <h4 class="center">Point Buy</h4>
+              <div class="row">
+                <!-- strength input -->
+                <div class="col-sm-2">
+                  <label for="character-strength-input">Strength</label>
+                  <div id="character-strength-input" class="form-control input-sm center merge-bottom-input" type="number" name="strengthInput">8</div>
+
+                  <div class="btn-group btn-block" role="group" aria-label="plus-minus">
+                    <button type="button" class="btn btn-sm btn-danger minus-button merge-top-left-button" disabled="disabled"><span class="glyphicon glyphicon-minus"></span></button>
+                    <button type="button" class="btn btn-sm btn-success plus-button merge-top-right-button"><span class="glyphicon glyphicon-plus"></span></button>
+                  </div><!-- end button group -->
+                </div> <!-- end column -->
+
+                <!-- dexterity input -->
+                <div class="col-sm-2">
+                  <label for="character-strength-input">Dexterity</label>
+                  <div id="character-dexterity-input" class="form-control input-sm center merge-bottom-input" type="number" value="8" name="strengthInput">8</div>
+
+                  <div class="btn-group btn-block" role="group" aria-label="plus-minus">
+                    <button type="button" class="btn btn-sm btn-danger minus-button merge-top-left-button" disabled="disabled"><span class="glyphicon glyphicon-minus"></span></button>
+                    <button type="button" class="btn btn-sm btn-success plus-button merge-top-right-button"><span class="glyphicon glyphicon-plus"></span></button>
+                  </div><!-- end button group -->
+                </div> <!-- end column -->
+
+                <!-- constitution input -->
+                <div class="col-sm-2">
+                  <label for="character-strength-input">Constitution</label>
+                  <div id="character-constitution-input" class="form-control input-sm center merge-bottom-input" type="number" value="8" name="strengthInput">8</div>
+
+                  <div class="btn-group btn-block" role="group" aria-label="plus-minus">
+                    <button type="button" class="btn btn-sm btn-danger minus-button merge-top-left-button" disabled="disabled"><span class="glyphicon glyphicon-minus"></span></button>
+                    <button type="button" class="btn btn-sm btn-success plus-button merge-top-right-button"><span class="glyphicon glyphicon-plus"></span></button>
+                  </div><!-- end button group -->
+                </div> <!-- end column -->
+
+                <!-- intelligence input -->
+                <div class="col-sm-2">
+                  <label for="character-strength-input">Intelligence</label>
+                  <div id="character-intelligence-input" class="form-control input-sm center merge-bottom-input" type="number" value="8" name="strengthInput">8</div>
+
+                  <div class="btn-group btn-block" role="group" aria-label="plus-minus">
+                    <button type="button" class="btn btn-sm btn-danger minus-button merge-top-left-button" disabled="disabled"><span class="glyphicon glyphicon-minus"></span></button>
+                    <button type="button" class="btn btn-sm btn-success plus-button merge-top-right-button"><span class="glyphicon glyphicon-plus"></span></button>
+                  </div><!-- end button group -->
+                </div> <!-- end column -->
+
+                <!-- wisdom input -->
+                <div class="col-sm-2">
+                  <label for="character-strength-input">Wisdom</label>
+                  <div id="character-wisdom-input" class="form-control input-sm center merge-bottom-input" type="number" value="8" name="strengthInput">8</div>
+
+                  <div class="btn-group btn-block" role="group" aria-label="plus-minus">
+                    <button type="button" class="btn btn-sm btn-danger minus-button merge-top-left-button" disabled="disabled"><span class="glyphicon glyphicon-minus"></span></button>
+                    <button type="button" class="btn btn-sm btn-success plus-button merge-top-right-button"><span class="glyphicon glyphicon-plus"></span></button>
+                  </div><!-- end button group -->
+                </div> <!-- end column -->
+
+                <!-- charisma input -->
+                <div class="col-sm-2">
+                  <label for="character-strength-input">Charisma</label>
+                  <div id="character-charisma-input" class="form-control input-sm center merge-bottom-input" type="number" value="8" name="strengthInput">8</div>
+
+                  <div class="btn-group btn-block" role="group" aria-label="plus-minus">
+                    <button type="button" class="btn btn-sm btn-danger minus-button merge-top-left-button" disabled="disabled"><span class="glyphicon glyphicon-minus"></span></button>
+                    <button type="button" class="btn btn-sm btn-success plus-button merge-top-right-button"><span class="glyphicon glyphicon-plus"></span></button>
+                  </div><!-- end button group -->
+                </div> <!-- end column -->
+
+              </div><!-- end row -->
+            </div><!-- end panel body -->
+          </div><!-- end tab pane -->
+
+          <!-- ability roll -->
+          <div class="tab-pane fade" id="roll">
+            <div class="panel-body">
+              <p>Roll</p>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="About">
+            <div class="panel-body">
+              <p>This is the ABOUT paragraph</p>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="equip">
+            <div class="panel-body">
+              <p>Equipment Form</p>
+            </div>
+          </div>
+
+        </div> <!-- end tab content -->
+      </div> <!-- end panel -->
+    </div> <!-- end column -->
+
+  </div> <!-- end row -->
+</div> <!-- end container -->
+
+<script type="text/javascript" src="/javascript/point-buy.js"></script>
