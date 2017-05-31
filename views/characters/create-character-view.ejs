@@ -4,7 +4,7 @@
   <!-- player/user name -->
   <div class="row">
     <div class="col-sm-12 text-center">
-      <div class="panel panel-default">
+      <div class="panel panel-success">
         <div class="panel-heading">
           <h3 class="panel-title">Player Name</h3> <!-- will eventually be req.user.name or something -->
         </div> <!-- end panel heading -->
@@ -139,186 +139,211 @@
 
 
 
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+
+          <div class="col-sm-4">
+            <!-- character's level input -->
+            <label for="">Level</label>
+            <input id="" class="form-control" type="number" name="">
+          </div>
+
+          <div class="col-sm-4">
+            <!-- character's xp input -->
+            <label for="">XP</label>
+            <input id="" class="form-control" type="number" name="">
+          </div>
+
+          <div class="col-sm-4">
+
+            <!-- character's hp input -->
+            <label for="">HP</label>
+            <input id="" class="form-control" type="number" name="">
+          </div>
+        </div> <!-- end row -->
+      </div> <!-- end panel body -->
+    </div> <!-- end panel -->
+
+
+    <!-- ABILITY -->
     <div class="row top-margin-50">
+      <div class="col-sm-3">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h4 class="center">Ability</h4>
 
-      <div class="col-sm-4">
-        <!-- character's level input -->
-        <label class="character-label" for="">Level</label><br>
-        <input id="" class="character-input" type="number" name=""><br>
-      </div>
+            <label for="">Strength</label>
+            <input id="" class="form-control" type="number" name="">
 
-      <div class="col-sm-4">
-        <!-- character's xp input -->
-        <label class="character-label" for="">XP</label><br>
-        <input id="" class="character-input" type="number" name=""><br>
-      </div>
+            <label for="">Dexterity</label>
+            <input id="" class="form-control" type="number" name="">
 
-      <div class="col-sm-4">
+            <label for="">Constitution</label>
+            <input id="" class="form-control" type="number" name="">
 
-        <!-- character's hp input -->
-        <label class="character-label" for="">HP</label><br>
-        <input id="" class="character-input" type="number" name=""><br>
-      </div>
-    </div> <!-- end row -->
+            <label for="">Intelligence</label>
+            <input id="" class="form-control" type="number" name="">
 
+            <label for="">Wisdom</label>
+            <input id="" class="form-control" type="number" name="">
 
-    <div class="row top-margin-50">
-
-      <div class="col-sm-2">
-
-        <label class="character-label" for="">Strength</label><br>
-        <input id="" class="character-input" type="number" name=""><br>
-
-        <label class="character-label" for="">Dexterity</label><br>
-        <input id="" class="character-input" type="number" name=""><br>
-
-        <label class="character-label" for="">Constitution</label><br>
-        <input id="" class="character-input" type="number" name=""><br>
-
-        <label class="character-label" for="">Intelligence</label><br>
-        <input id="" class="character-input" type="number" name=""><br>
-
-        <label class="character-label" for="">Wisdom</label><br>
-        <input id="" class="character-input" type="number" name=""><br>
-
-        <label class="character-label" for="">Charisma</label><br>
-        <input id="" class="character-input" type="number" name=""><br>
+            <label for="">Charisma</label>
+            <input id="" class="form-control" type="number" name="">
+          </div> <!-- end panel body -->
+        </div> <!-- end panel -->
       </div> <!-- end column -->
 
-      <div class="col-sm-2">
-        <label class="character-label" for="">Inspiration</label><br>
-        <input id="" class="character-input" type="number" name=""><br>
 
-        <label class="character-label" for="">Proficiency Bonus</label><br>
-        <input id="" class="character-input" type="number" name=""><br>
+      <div class="col-sm-3">
 
-        <div class="character-list-label">
-          <p>Saving Throws</p>
-          <ul>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Strength</label>
-            </li>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <label for="">Inspiration</label>
+            <input id="" class="form-control" type="number" name="">
+          </div> <!-- end panel body -->
+        </div> <!-- end panel -->
 
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Strength</label>
-            </li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Constitution</label>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Constitution</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Wisdom</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Charisma</label>
-            </li>
-          </ul>
-        </div> <!-- end saving throws box -->
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <label for="">Proficiency Bonus</label>
+            <input id="" class="form-control" type="number" name="">
+          </div> <!-- end panel body -->
+        </div> <!-- end panel -->
 
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="character-list-label">
+              <h4 class="center">Saving Throws</h4>
+              <ul>
+                <li>
+                  <label for="">Strength</label>
+                  <input class="form-control" id="" type="number" name="">
+                </li>
 
-        <div class="character-list-label">
-          <p>Skills</p>
-          <ul>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Acrobatics</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Animal Handling</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Arcana</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Athletics</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Deception</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">History</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Insight</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Intimidation</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Investigation</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Medicine</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Nature</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Perception</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Performance</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Persuasion</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Religion</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Slight of hand</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Stealth</label>
-            </li>
-            <li>
-              <input id="" type="number" name="">
-              <label class="character-label-small" for="">Survival</label>
-            </li>
+                <li>
+                  <label for="">Strength</label>
+                  <input class="form-control" id="" type="number" name="">
+                </li>
+                <label for="">Constitution</label>
+                  <input class="form-control" id="" type="number" name="">
+                <li>
+                  <label for="">Constitution</label>
+                  <input class="form-control" id="" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Wisdom</label>
+                  <input class="form-control" id="" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Charisma</label>
+                  <input class="form-control" id="" type="number" name="">
+                </li>
+              </ul>
+            </div> <!-- end saving throws box -->
+          </div> <!-- end panel body -->
+        </div> <!-- end panel -->
 
-          </ul>
-        </div> <!-- end skills box -->
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="character-list-label">
+              <h4 class="center">Skills</h4>
+              <ul>
+                <li>
+                  <label for="">Acrobatics</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Animal Handling</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Arcana</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Athletics</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Deception</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">History</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Insight</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Intimidation</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Investigation</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Medicine</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Nature</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Perception</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Performance</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Persuasion</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Religion</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Slight of hand</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Stealth</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
+                <li>
+                  <label for="">Survival</label>
+                  <input id="" class="form-control" type="number" name="">
+                </li>
 
+              </ul>
+            </div> <!-- end skills box -->
+          </div> <!-- end panel body -->
+        </div> <!-- end panel -->
 
       </div> <!-- end column -->
 
-      <div class="col-sm-8">
-        <label class="character-label" for="">Features & Traits</label><br>
-        <input id="" class="character-input" type="text" name=""><br>
+      <div class="col-sm-6">
+        <label for="">Features & Traits</label>
+        <textarea id="" class="form-control" name="" rows="10"></textarea>
 
-        <label class="character-label" for="">Speed</label><br>
-        <input id="" class="character-input" type="number" name=""><br>
+        <label for="">Speed</label>
+        <input id="" class="form-control" type="number" name="">
 
-        <label class="character-label" for="">Armor Class</label><br>
-        <input id="" class="character-input" type="text" name=""><br>
+        <label for="">Armor Class</label>
+        <input id="" class="form-control" type="text" name="">
 
-        <label class="character-label" for="">Initiative</label><br>
-        <input id="" class="character-input" type="number" name=""><br>
+        <label for="">Initiative</label>
+        <input id="" class="form-control" type="number" name="">
 
-        <label class="character-label" for=""></label><br>
-        <input id="" class="character-input" type="text" name=""><br>
+        <label for=""></label>
+        <input id="" class="form-control" type="text" name="">
 
       </div> <!-- end column -->
     </div> <!-- end row -->

@@ -1,58 +1,64 @@
-// $('#point-buy input').change( (e) => {
-//
-//   console.log(e.currentTarget);
-//   if (e.currentTarget.html >= '14') {
-//     $(e.currentTarget).attr('disabled', 'disabled');
-//   }
-//
-//   if (e.currentTarget.value <= '8') {
-//     $(e.currentTarget).attr('disabled', 'disabled');
-//   }
-// });
-
-
+$(document).ready( () => {
+  const allPointBuys = $('#point-buy input');
+  for (let i = 0; i < allPointBuys.length; i++) {
+    $(allPointBuys[i]).attr('value', '8');
+  }
+});
 
 
 $('.minus-button').click( (e) => {
+  e.preventDefault();
 
   const currentInput = $(e.currentTarget).parent().prev()[0];
-  console.log(currentInput);
 
-  let minusInputValue = $(currentInput).html();
-  console.log(minusInputValue);
+  let minusInputValue = $(currentInput).val();
+
+  let pointBuyTotal = $('#point-buy-total').html();
 
   if (minusInputValue > 8) {
     minusInputValue --;
+    pointBuyTotal ++;
     $($(e.currentTarget).next()).removeAttr('disabled');
-    $(currentInput).html(minusInputValue);
-    console.log(currentInput);
+    $('#point-buy-total').html(pointBuyTotal);
+    $(currentInput).val(minusInputValue);
 
     if (minusInputValue <= 8) {
-      console.log(currentInput);
       $(e.currentTarget).attr('disabled', 'disabled');
+    }
+
+    let allInputs = $('#point-buy input');
+
+    for (let i = 0; i < allInputs.length; i++) {
+      if ($(allInputs[i]).val() < 15) {
+        $($('#point-buy .btn-success')[i]).removeAttr('disabled');
+      }
     }
   }
 });
 
 
-
 $('.plus-button').click( (e) => {
+  e.preventDefault();
 
   const currentInput = $(e.currentTarget).parent().prev()[0];
-  console.log(currentInput);
 
-  let plusInputValue = $(currentInput).html();
-  console.log(plusInputValue);
+  let plusInputValue = $(currentInput).val();
 
-  if (plusInputValue < 15) {
+  let pointBuyTotal = $('#point-buy-total').html();
+
+  if (plusInputValue < 15 && pointBuyTotal > 0) {
     plusInputValue ++;
-    console.log($(e.currentTarget).prev()[0]);
+    pointBuyTotal --;
     $($(e.currentTarget).prev()[0]).removeAttr('disabled');
-    $(currentInput).html(plusInputValue);
+    $('#point-buy-total').html(pointBuyTotal);
+    $(currentInput).val(plusInputValue);
 
     if (plusInputValue >= 15) {
-      console.log(e.currentTarget);
       $(e.currentTarget).attr('disabled', 'disabled');
+    }
+
+    if (pointBuyTotal <= 0) {
+      $('#point-buy .btn-success').attr('disabled', 'disabled');
     }
   }
 });
