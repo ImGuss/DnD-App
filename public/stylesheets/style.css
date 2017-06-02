@@ -16,6 +16,10 @@ h1 {
   text-align: center;
 }
 
+.display-block {
+  display: block;
+}
+
 .top-margin-15 {
   margin-top: 15px;
 }

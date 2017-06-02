@@ -1,0 +1,605 @@
+<div class="container">
+
+  <!-- player/user name -->
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Player Name</h3> <!-- will eventually be req.user.name or something -->
+        </div> <!-- end panel heading -->
+      </div> <!-- end panel -->
+    </div> <!-- end column -->
+  </div> <!-- end row -->
+
+  <form class="form-group" action="/characters/new" method="post">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <!-- character's first name input -->
+            <label for="character-first-name-input">First Name</label>
+            <input id="character-first-name-input" class="form-control" type="text" name="firstNameInput">
+
+
+            <!-- character's last name input -->
+            <label for="character-last-name-input">Last Name</label>
+            <input id="character-last-name-input" class="form-control" type="text" name="lastNameInput">
+          </div> <!-- panel body -->
+        </div> <!-- end panel -->
+      </div> <!-- end column -->
+
+
+      <div class="col-sm-8">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6">
+                <!-- character's race input -->
+                <label for="race-input">Race</label>
+                <select id="race-input" class="form-control" name="raceInput">
+                  <option value="aarakocra">Aarakocra</option>
+                  <option value="aasimar">Aasimar</option>
+                  <option value="anthroMice">Anthropomorphic Mice</option>
+                  <option value="changeling">Changeling</option>
+                  <option value="deepGnome">Deep Gnome</option>
+                  <option value="dragonborn">Dragonborn</option>
+                  <option value="dwarf">Dwarf</option>
+                  <option value="elf">Elf</option>
+                  <option value="firbolg">Firbolg</option>
+                  <option value="genasi">Genasi</option>
+                  <option value="gnome">Gnome</option>
+                  <option value="goblin">Goblin</option>
+                  <option value="goliath">Goliath</option>
+                  <option value="halfling">Halfling</option>
+                  <option value="halfElf">Half-Elf</option>
+                  <option value="halfOrc">Half-Orc</option>
+                  <option value="hobgoblin">Hobgoblin</option>
+                  <option value="human">Human</option>
+                  <option value="kenku">Kenku</option>
+                  <option value="kobold">Kobold</option>
+                  <option value="kor">Kor</option>
+                  <option value="lizardFolk">Lizardfolk</option>
+                  <option value="merfolk">Merfolk</option>
+                  <option value="minotaur">Minotaur</option>
+                  <option value="orc">Orc</option>
+                  <option value="revenant">Revenant</option>
+                  <option value="shifter">Shifter</option>
+                  <option value="tabaxi">Tabaxi</option>
+                  <option value="tiefling">Tiefling</option>
+                  <option value="triton">Triton</option>
+                  <option value="vampire">Vampire</option>
+                  <option value="warforged">Warforged</option>
+                  <option value="yuantiPureblodd">Yuan-Ti Pureblood</option>
+                </select>
+              </div> <!-- end 1st top panel column -->
+
+              <div class="col-sm-6">
+                <!-- character's class input -->
+                <label for="class-input">Class</label>
+                <select id="class-input" class="form-control" type="text" name="classInput">
+                  <option value="barbarian">Barbarian</option>
+                  <option value="bard">Bard</option>
+                  <option value="cleric">Cleric</option>
+                  <option value="druid">Druid</option>
+                  <option value="fighter">Fighter</option>
+                  <option value="monk">Monk</option>
+                  <option value="paladin">Paladin</option>
+                  <option value="ranger">Ranger</option>
+                  <option value="rogue">Rogue</option>
+                  <option value="sorcerer">Sorcerer</option>
+                  <option value="warlock">Warlock</option>
+                  <option value="wizard">Wizard</option>
+                </select>
+              </div> <!-- end 2nd top panel column -->
+            </div> <!-- end top row -->
+
+            <div class="row">
+              <div class="col-sm-6">
+                <!-- characters background input -->
+                <label for="background-input">Background</label>
+                <select id="background-input" class="form-control" type="text" name="backgroundInput">
+                  <option value="acolyte">Acolyte</option>
+                  <option value="charlatan">Charlatan</option>
+                  <option value="criminal">Criminal</option>
+                  <option value="entertainer">Entertainer</option>
+                  <option value="folkHero">Folk Hero</option>
+                  <option value="guildArtisan">Guild Artisan</option>
+                  <option value="hermit">Hermit</option>
+                  <option value="noble">Noble</option>
+                  <option value="outlander">Outlander</option>
+                  <option value="sage">Sage</option>
+                  <option value="sailor">Sailor</option>
+                  <option value="soldier">Soldier</option>
+                  <option value="urchin">Urchin</option>
+                </select>
+              </div> <!-- end 1st bottom panel column -->
+
+              <div class="col-sm-6">
+                <!-- character's alignment input -->
+                <label for="alignment-input">Alignment</label>
+                <select id="alignment-input" class="form-control" name="alignmentInput">
+                  <option value="Lawful-Good">Lawful Good</option>
+                  <option value="Neutral-Good">Neutral Good</option>
+                  <option value="Chaotic-Good">Chaotic Good</option>
+                  <option value="Lawful-Neutral">Lawful Neutral</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Chaotic-Neutral">Chaotic Neutral</option>
+                  <option value="Lawful-Evil">Lawful Evil</option>
+                  <option value="Neutral-Evil">Neutral Evil</option>
+                  <option value="Chaotic-Evil">Chaotic Evil</option>
+                </select>
+              </div> <!-- end 2nd bottom panel column -->
+            </div> <!-- end bottom row -->
+
+          </div> <!-- end panel body -->
+        </div> <!-- end panel -->
+      </div> <!-- end column -->
+    </div> <!-- end row -->
+
+
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+
+          <div class="col-sm-4">
+            <!-- character's level input -->
+            <label for="level-input">Level</label>
+            <input id="level-input" class="form-control" type="number" name="levelInput">
+          </div>
+
+          <div class="col-sm-4">
+            <!-- character's xp input -->
+            <label for="current-xp">XP</label>
+            <input id="current-xp" class="form-control" type="number" name="xpInput">
+          </div>
+
+          <div class="col-sm-4">
+
+            <!-- character's hp input -->
+            <label for="hp-input">HP</label>
+            <input id="hp-input" class="form-control" type="number" name="hpInput">
+          </div>
+        </div> <!-- end row -->
+      </div> <!-- end panel body -->
+    </div> <!-- end panel -->
+
+
+    <div class="row top-margin-25">
+      <div class="col-sm-2">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h4 class="center">Ability</h4>
+
+            <!-- ABILITY -->
+            <label for="strength-input">Strength</label>
+            <input id="strength-input" class="form-control input-sm" type="number" name="strengthInput">
+
+            <label for="dexterity-input">Dexterity</label>
+            <input id="dexterity-input" class="form-control input-sm" type="number" name="dexInput">
+
+            <label for="const-input">Constitution</label>
+            <input id="const-input" class="form-control input-sm" type="number" name="constInput">
+
+            <label for="intel-input">Intelligence</label>
+            <input id="intel-input" class="form-control input-sm" type="number" name="intelInput">
+
+            <label for="wisdom-input">Wisdom</label>
+            <input id="wisdom-input" class="form-control input-sm" type="number" name="wisdomInput">
+
+            <label for="charisma-input">Charisma</label>
+            <input id="charisma-input" class="form-control input-sm" type="number" name="charismaInput">
+          </div> <!-- end panel body -->
+        </div> <!-- end panel -->
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <label for="inspiration-input">Inspiration</label>
+            <input id="inspiration-input" class="form-control input-sm" type="number" name="inspInput">
+          </div> <!-- end panel body -->
+        </div> <!-- end panel -->
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <label for="prof-input">Proficiency Bonus</label>
+            <input id="prof-input" class="form-control input-sm" type="number" name="profInput">
+          </div> <!-- end panel body -->
+        </div> <!-- end panel -->
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="character-list-label">
+              <h4 class="center">Saving Throws</h4>
+
+
+              <label for="strength-saving-input">Strength</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="saving-input" type="number" class="form-control" name="strengthSavingInput">
+              </div>
+
+              <label for="dex-saving-input">Dexterity</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="dex-saving-input" type="number" class="form-control" name="dexSavingInput">
+              </div>
+
+              <label for="const-saving-input">Constitution</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="const-saving-input" type="number" class="form-control" name="constSavingInput">
+              </div>
+
+              <label for="intel-saving-input">Intelligence</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="intel-saving-input" type="number" class="form-control" name="intelSavingInput">
+              </div>
+
+              <label for="wisdom-saving-input">Wisdom</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="wisdom-saving-input" type="number" class="form-control" name="wisdomSavingInput">
+              </div>
+
+              <label for="charisma-saving-input">Charisma</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="charisma-saving-input" type="number" class="form-control" name="charismaSavingInput">
+              </div>
+
+            </div> <!-- end saving throws box -->
+          </div> <!-- end panel body -->
+        </div> <!-- end panel -->
+
+      </div> <!-- end column -->
+
+
+      <div class="col-sm-2">
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="character-list-label">
+              <h4 class="center">Skills</h4>
+
+              <label for="acro-input">Acrobatics</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="acro-input" type="number" class="form-control" name="acroInput">
+              </div>
+
+              <label for="animal-handling-input">Animal Handling</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="animal-handling-input" type="number" class="form-control" name="animalHandlingInput">
+              </div>
+
+              <label for="arcana-input">Arcana</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="arcana-input" type="number" class="form-control" name="arcanaInput">
+              </div>
+
+              <label for="athletics-input">Athletics</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="athletics-input" type="number" class="form-control" name="athleticsInput">
+              </div>
+
+              <label for="deception-input">Deception</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="deception-input" type="number" class="form-control" name="deceptionInput">
+              </div>
+
+              <label for="history-input">History</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="history-input" type="number" class="form-control" name="historyInput">
+              </div>
+
+              <label for="insight-input">Insight</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="insight-input" type="number" class="form-control" name="insightInput">
+              </div>
+
+              <label for="intimidation-input">Intimidation</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="intimidation-input" type="number" class="form-control" name="intimidationInput">
+              </div>
+
+              <label for="invest-input">Investigation</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="invest-input" type="number" class="form-control" name="invInput">
+              </div>
+
+              <label for="medicine-input">Medicine</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="medicine-input" type="number" class="form-control" name="medicineInput">
+              </div>
+
+              <label for="nature-input">Nature</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="nature-input" type="number" class="form-control" name="natureInput">
+              </div>
+
+              <label for="perception-input">Perception</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="perception-input" type="number" class="form-control" name="skillsPerceptionInput">
+              </div>
+
+              <label for="performance-input">Performance</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="performance-input" type="number" class="form-control" name="performanceInput">
+              </div>
+
+              <label for="persuasion-input">Persuasion</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="persuasion-input" type="number" class="form-control" name="skillsPersuasionInput">
+              </div>
+
+              <label for="religion-input">Religion</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="religion-input" type="number" class="form-control" name="religionInput">
+              </div>
+
+              <label for="slight-of-hand-input">Slight of hand</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="slight-of-hand-input" type="number" class="form-control" name="slightInput">
+              </div>
+
+              <label for="stealth-input">Stealth</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="stealth-input" type="number" class="form-control" name="skillsStealthInput">
+              </div>
+
+              <label for="survival-input">Survival</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="...">
+                </span>
+                <input id="survival-input" type="number" class="form-control" name="survivalInput">
+              </div>
+
+            </div> <!-- end skills box -->
+          </div> <!-- end panel body -->
+        </div> <!-- end panel -->
+      </div> <!-- end column -->
+
+      <!-- 3rd column -->
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+            <div class="row">
+
+              <!-- armor class -->
+              <div class="col-sm-4">
+                <label for="armor-class-input">Armor Class</label>
+                <input id="armor-class-input" class="form-control" type="number" name="armorClassInput">
+              </div> <!-- end column -->
+
+              <!-- initiative -->
+              <div class="col-sm-4">
+                <label for="initiative-input">Initiative</label>
+                <input id="initiative-input" class="form-control" type="number" name="initInput">
+              </div> <!-- end column -->
+
+              <!-- speed -->
+              <div class="col-sm-4">
+                <label for="speed-input">Speed</label>
+                <input id="speed-input" class="form-control" type="number" name="speedInput">
+              </div> <!-- end column -->
+            </div> <!-- end row -->
+
+
+            <div class="row top-margin-15">
+
+              <!-- temporary hit points -->
+              <div class="col-sm-12">
+                <label for="temp-hp-input">Temporary Hit Points</label>
+                <input id="temp-hp-input" class="form-control" type="number" name="tempHpInput">
+              </div> <!-- end column -->
+            </div> <!-- end row -->
+
+
+            <div class="row top-margin-15">
+
+              <!-- current hit points -->
+              <div class="col-sm-6">
+                <label for="current-hp-input">Current Hit Points</label>
+                <input id="current-hp-input" class="form-control" type="number" name="currentHpInput">
+              </div> <!-- end column -->
+
+              <!-- hit dice -->
+              <div class="col-sm-6">
+                <label for="hit-dice-input">Hit Dice</label>
+                <input id="hit-dice-input" class="form-control" type="number" name="hitDiceInput">
+              </div> <!-- end column -->
+
+            </div> <!-- end row -->
+
+            <!-- death saves -->
+            <div class="row top-margin-15">
+              <div class="col-sm-6">
+                <label class="pull-right" for="">Successes</label>
+              </div>
+              <div class="col-sm-6">
+                <label class="checkbox-inline">
+                  <input id="" type="checkbox">
+                </label>
+
+                <label class="checkbox-inline">
+                  <input id="" type="checkbox">
+                </label>
+
+                <label class="checkbox-inline">
+                  <input id="" type="checkbox">
+                </label>
+              </div> <!-- end column -->
+            </div> <!-- end row -->
+
+
+            <div class="row">
+              <div class="col-sm-6">
+                <label class="pull-right" for="">Failures</label>
+              </div>
+              <div class="col-sm-6">
+                <label class="checkbox-inline">
+                  <input id="" type="checkbox">
+                </label>
+
+                <label class="checkbox-inline">
+                  <input id="" type="checkbox">
+                </label>
+
+                <label class="checkbox-inline">
+                  <input id="" type="checkbox">
+                </label>
+              </div> <!-- end column -->
+            </div> <!-- end row -->
+
+          </div> <!-- end panel body -->
+        </div> <!-- end panel -->
+
+        <!-- attacks and spellcasting -->
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                 <label for="attacks-spells-input">Attacks and Spellcasting</label>
+                 <textarea id="attacks-spells-input" class="form-control" name="attacksSpellsInput" rows="8"></textarea>
+              </div> <!-- end panel body -->
+            </div> <!-- end panel -->
+          </div> <!-- end column -->
+        </div> <!-- end row -->
+
+        <!-- equipment -->
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                 <label for="equipment-input">Equipment</label>
+                 <textarea id="equipment-input" class="form-control" name="equipmentInput" rows="8"></textarea>
+              </div> <!-- end panel body -->
+            </div> <!-- end panel -->
+          </div> <!-- end column -->
+        </div> <!-- end row -->
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <label for="perception-input">Passive Wisdom (Perception)</label>
+                <input id="perception-input" class="form-control" type="number" name="perceptionInput">
+              </div> <!-- end panel-body -->
+            </div> <!-- end panel -->
+          </div> <!-- end column -->
+        </div> <!-- end row -->
+
+      </div> <!-- end 3rd column -->
+
+
+
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <label for="personality-input">Personality Traits</label>
+            <textarea id="personality-input" class="form-control" name="personalityInput" rows="4"></textarea>
+
+            <label for="ideals-input">Ideals</label>
+            <textarea id="ideals-input" class="form-control" name="idealsInput" rows="4"></textarea>
+
+            <label for="bonds-input">Bonds</label>
+            <textarea id="bonds-input" class="form-control" name="bondsInput" rows="4"></textarea>
+
+            <label for="flaws-input">Flaws</label>
+            <textarea id="flaws-input" class="form-control" name="flawsInput" rows="4"></textarea>
+          </div> <!-- end panel body -->
+        </div> <!-- end panel -->
+
+
+        <!-- features and traites -->
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <label for="features-input">Features & Traits</label>
+            <textarea id="features-input" class="form-control" name="featuresInput" rows="10"></textarea>
+          </div>
+        </div>
+
+
+        <!-- other proficiencies and languages -->
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <label for="other-prof-input">Other Proficiencies & Languages</label>
+            <textarea id="other-prof-input" class="form-control" name="otherProfInput" rows="10"></textarea>
+          </div>
+        </div>
+      </div> <!-- end 4th column -->
+    </div> <!-- end row -->
+
+
+    <div class="row">
+      <div class="col-sm-12 center">
+        <button class="btn btn-success btn-lg">Create Character</button>
+      </div> <!-- end column -->
+    </div> <!-- end row -->
+  </form> <!-- end form -->
+</div> <!-- end container -->

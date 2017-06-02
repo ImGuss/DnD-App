@@ -31,3 +31,6 @@ npm-debug.log
 
 # Environment Variables file
 .env
+
+# To Do List
+.todo
