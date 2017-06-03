@@ -1,0 +1,31 @@
+<h2 class="center">Your Characters</h2>
+
+<div class="container">
+
+
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-body top-margin-15">
+        <% characters.forEach( (char) => { %>
+          <div class="col-sm-3">
+            <div class="panel panel-default">
+              <div class="panel-heading char-hover">
+                <a class="char-hover" href="/characters/<%= char._id %>">
+                  <h3 class="panel-title center"><%= char.firstName %> <%= char.lastName %></h3>
+                </a>
+              </div>
+              <div class="panel-body">
+                <ul>
+                  <li><%= char.race %></li>
+                  <li><%= char.class %></li>
+                  <li><%= char.level %></li>
+                </ul>
+              </div>
+            </div>
+          </div> <!-- end column -->
+        <% }); %>
+      </div> <!-- end panel body -->
+    </div> <!--end panel -->
+  </div> <!-- end row -->
+
+</div> <!-- end container -->

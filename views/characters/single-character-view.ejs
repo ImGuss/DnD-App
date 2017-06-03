@@ -1,0 +1,360 @@
+<div class="container">
+
+  <!-- player/user name -->
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          <h3 class="panel-title">Player Name</h3> <!-- will eventually be req.user.name or something -->
+        </div> <!-- end panel heading -->
+      </div> <!-- end panel -->
+    </div> <!-- end column -->
+  </div> <!-- end row -->
+
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <!-- character's first and last name -->
+          <h2><%= char.firstName %> <%= char.lastName %></h2>
+        </div> <!-- panel body -->
+      </div> <!-- end panel -->
+    </div> <!-- end column -->
+
+
+    <div class="col-sm-8">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <!-- character's race -->
+              <h4>Race</h4>
+              <%= char.race %>
+            </div> <!-- end 1st top panel column -->
+
+            <div class="col-sm-6">
+              <!-- character's class -->
+              <h4>Class</h4>
+              <%= char.class %>
+            </div> <!-- end 2nd top panel column -->
+          </div> <!-- end top row -->
+
+          <div class="row">
+            <div class="col-sm-6">
+              <!-- characters background -->
+              <h4>Background</h4>
+              <%= char.background %>
+            </div> <!-- end 1st bottom panel column -->
+
+            <div class="col-sm-6">
+              <!-- character's alignment -->
+              <h4>Alignment</h4>
+              <%= char.alignment %>
+            </div> <!-- end 2nd bottom panel column -->
+          </div> <!-- end bottom row -->
+
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+    </div> <!-- end column -->
+  </div> <!-- end row -->
+
+
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row">
+
+        <div class="col-sm-4">
+          <!-- character's level input -->
+          <h4>Level</h4>
+          <%= char.level %>
+        </div>
+
+        <div class="col-sm-4">
+          <!-- character's xp input -->
+          <h4>XP</h4>
+          <%= char.currentXp %>
+        </div>
+
+        <div class="col-sm-4">
+
+          <!-- character's hp input -->
+          <h4>HP</h4>
+          <%= char.hitPoints %>
+        </div>
+      </div> <!-- end row -->
+    </div> <!-- end panel body -->
+  </div> <!-- end panel -->
+
+
+  <div class="row top-margin-25">
+    <div class="col-sm-2">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4 class="center">Ability</h4>
+
+          <!-- ABILITY -->
+          <h4>Strength</h4>
+          <%= char.strength %>
+
+          <h4>Dexterity</h4>
+          <%= char.dexterity %>
+
+          <h4>Constitution</h4>
+          <%= char.constitution %>
+
+          <h4>Intelligence</h4>
+          <%= char.intelligence %>
+
+          <h4>Wisdom</h4>
+          <%= char.wisdom %>
+
+          <h4>Charisma</h4>
+          <%= char.charisma %>
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4>Inspiration</h4>
+          <%= char.inspiration %>
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4>Proficiency Bonus</h4>
+          <%= char.proficiencyBonus %>
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="character-list-label">
+            <h4 class="center">Saving Throws</h4>
+
+
+            <h4>Strength</h4>
+            <%= char.savingstrength %>
+
+            <h4>Dexterity</h4>
+            <%= char.savingdexterity %>
+
+            <h4>Constitution</h4>
+            <%= char.savingconstitution %>
+
+            <h4>Intelligence</h4>
+            <%= char.savingintelligence %>
+
+            <h4>Wisdom</h4>
+            <%= char.savingwisdom %>
+
+            <h4>Charisma</h4>
+            <%= char.savingcharisma %>
+
+          </div> <!-- end saving throws box -->
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+
+    </div> <!-- end column -->
+
+
+    <div class="col-sm-2">
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="character-list-label">
+            <h4 class="center">Skills</h4>
+
+            <h4>Acrobatics</h4>
+            <%= char.acrobatics %>
+
+            <h4>Animal Handling</h4>
+            <%= char.animalHandling %>
+
+            <h4>Arcana</h4>
+            <%= char.arcana %>
+
+            <h4>Athletics</h4>
+            <%= char.athletics %>
+
+            <h4>Deception</h4>
+            <%= char.deception %>
+
+            <h4>History</h4>
+            <%= char.history %>
+
+            <h4>Insight</h4>
+            <%= char.insight %>
+
+            <h4>Intimidation</h4>
+            <%= char.intimidation %>
+
+            <h4>Investigation</h4>
+            <%= char.investigation %>
+
+            <h4>Medicine</h4>
+            <%= char.medicine %>
+
+            <h4>Nature</h4>
+            <%= char.nature %>
+
+            <h4>Perception</h4>
+            <%= char.skillsPerception %>
+
+            <h4>Performance</h4>
+            <%= char.performance %>
+
+            <h4>Persuasion</h4>
+            <%= char.persuasion %>
+
+            <h4>Religion</h4>
+            <%= char.religion %>
+
+            <h4>Slight of Hand</h4>
+            <%= char.slightOfHand %>
+
+            <h4>Stealth</h4>
+            <%= char.stealth %>
+
+            <h4>Survival</h4>
+            <%= char.survival %>
+
+          </div> <!-- end skills box -->
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+    </div> <!-- end column -->
+
+    <!-- 3rd column -->
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+          <div class="row">
+
+            <!-- armor class -->
+            <div class="col-sm-4">
+              <h4>Armor Class</h4>
+              <%= char.armorClass %>
+            </div> <!-- end column -->
+
+            <!-- initiative -->
+            <div class="col-sm-4">
+              <h4>Initiative</h4>
+              <%= char.initiative %>
+            </div> <!-- end column -->
+
+            <!-- speed -->
+            <div class="col-sm-4">
+              <h4>Speed</h4>
+              <%= char.speed %>
+            </div> <!-- end column -->
+          </div> <!-- end row -->
+
+
+          <div class="row top-margin-15">
+
+            <!-- temporary hit points -->
+            <div class="col-sm-12">
+              <h4>Temporary Hit Points</h4>
+              <%= char.tempHp %>
+            </div> <!-- end column -->
+          </div> <!-- end row -->
+
+
+          <div class="row top-margin-15">
+
+            <!-- current hit points -->
+            <div class="col-sm-6">
+              <h4>Current Hit Points</h4>
+              <%= char.currentHp %>
+            </div> <!-- end column -->
+
+            <!-- hit dice -->
+            <div class="col-sm-6">
+              <h4>Hit Dice</h4>
+              <%= char.hitDice %>
+            </div> <!-- end column -->
+
+          </div> <!-- end row -->
+
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+
+      <!-- attacks and spellcasting -->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>Attacks and Spellcasting</h4>
+              <%= char.attacksAndSpells %>
+            </div> <!-- end panel body -->
+          </div> <!-- end panel -->
+        </div> <!-- end column -->
+      </div> <!-- end row -->
+
+      <!-- equipment -->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>Equipment</h4>
+              <%= char.equipment %>
+            </div> <!-- end panel body -->
+          </div> <!-- end panel -->
+        </div> <!-- end column -->
+      </div> <!-- end row -->
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>Passive Wisdom (Perception)</h4>
+              <%= char.perception %>
+            </div> <!-- end panel-body -->
+          </div> <!-- end panel -->
+        </div> <!-- end column -->
+      </div> <!-- end row -->
+
+    </div> <!-- end 3rd column -->
+
+
+
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4>Personality Traits</h4>
+          <%= char.personalityTraits %>
+
+          <h4>Ideals</h4>
+          <%= char.ideals %>
+
+          <h4>Bonds</h4>
+          <%= char.bonds %>
+
+          <h4>Flaws</h4>
+          <%= char.flaws %>
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+
+
+      <!-- features and traits -->
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4>Features & Traits</h4>
+          <%= char.features %>
+        </div>
+      </div>
+
+
+      <!-- other proficiencies and languages -->
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4>Other Proficiencies and Languages</h4>
+          <%= char.otherProfLang %>
+        </div>
+      </div>
+    </div> <!-- end 4th column -->
+  </div> <!-- end row -->
+</div> <!-- end container -->

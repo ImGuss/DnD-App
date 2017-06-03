@@ -1,25 +1,21 @@
 const express = require('express');
 
-
 const Character = require('../models/character-model');
+const User = require('../models/user-model');
 
 const characterRoute = express.Router();
 
-
-
-characterRoute.get('/characters', (req, res, next) => {
-
-});
-
+// basic character creator get route
 characterRoute.get('/characters/new/basic', (req, res, next) => {
   res.render('characters/create-character-basic-view');
 });
 
-
+// easy character creator get route
 characterRoute.get('/characters/new/easy', (req, res, next) => {
   res.render('characters/new-char-easy-view');
 });
 
+// save character post route
 characterRoute.post('/characters/new', (req, res, next) => {
 
   const newChar = new Character({
@@ -120,6 +116,45 @@ characterRoute.post('/characters/new', (req, res, next) => {
 
     res.redirect('/');
   });
+});
+
+// show user's characters get route
+characterRoute.get('/characters', (req, res, next) => {
+
+  Character.find(
+    {},
+    {
+      firstName: 1, lastName: 1, race: 1, class: 1, level: 1
+    },
+    (err, characterList) => {
+
+    if (err) {
+      next (err);
+      return;
+    }
+
+    res.render('characters/all-characters-view',
+      {characters: characterList}
+    );
+  });
+});
+
+characterRoute.get('/characters/:id', (req, res, next) => {
+  const currentChar = req.params.id;
+
+  Character.findById(
+    currentChar,
+    (err, char) => {
+      if (err) {
+        next(err);
+        return;
+      }
+
+      res.render('characters/single-character-view',
+        {char: char}
+      );
+    }
+  );
 });
 
 

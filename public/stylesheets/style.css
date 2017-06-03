@@ -8,6 +8,19 @@ a {
   color: black;
 }
 
+.char-hover {
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.char-hover:hover {
+  text-decoration: none;
+  background: #dff0d8;
+  color: black;
+}
+
 h1 {
   text-align: center;
 }

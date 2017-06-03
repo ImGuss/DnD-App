@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 const characterSchema = new Schema(
   {
+    owner: {type: Schema.Types.ObjectId},
     // basics
     firstName: {type: String, required: true},
     lastName: {type: String},

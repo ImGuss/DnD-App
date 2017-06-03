@@ -8,11 +8,20 @@ const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 const session      = require('express-session');
 const passport     = require('passport');
+const flash        = require('flash');
 
-const Player       = require('./models/player-model');
+const User         = require('./models/user-model');
 const Character    = require('./models/character-model');
 
-mongoose.connect('mongodb://localhost/dnd-app');
+
+// load env variables
+require('dotenv').config();
+
+// run passport strategies
+require('./config/passport-config');
+
+// connect mongoose
+mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
 
@@ -24,7 +33,7 @@ app.set('view engine', 'ejs');
 app.locals.title = 'Express - Generated with IronGenerator';
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -36,10 +45,16 @@ app.use(layouts);
 // BEGIN ROUTES
 // -----------------------------------------------
 const index = require('./routes/index');
-app.use('/', index);
+app.use(index);
+
+const authoRoutes = require('./routes/autho-routes');
+app.use(authoRoutes);
 
 const characterRoute = require('./routes/character-routes');
 app.use(characterRoute);
+
+const userRoutes = require('./routes/user-routes');
+app.use(userRoutes);
 // -----------------------------------------------
 // END ROUTES
 
