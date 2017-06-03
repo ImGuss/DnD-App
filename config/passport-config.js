@@ -61,9 +61,15 @@ passport.use(new FbStrategy(
 
         // if no user is found create a new User in the db
         if (!foundUser) {
+
+          const splitName = profile.displayName.split(' ');
+          const firstName = splitName[0];
+          const lastName = splitName[1];
+
           const theUser = new User({
             facebookID: profile.id,
-            name: profile.displayName
+            firstName: firstName,
+            lastName: lastName,
           });
 
           // save the user
@@ -141,9 +147,9 @@ passport.use(new LocalStrategy(
     // these two refer to the 'name' field in our login form.
 
     // <input name="loginUserName">
-    usernameField: 'loginUserName',
+    usernameField: 'usernameLoginInput',
     // <input name="loginPassword">
-    passwordField: 'loginPassword'
+    passwordField: 'passwordInput'
   },
   // 2nd arg, callback for the logic that validates the login
   (loginUsername, loginPassword, next) => {
@@ -163,13 +169,13 @@ passport.use(new LocalStrategy(
         }
 
         // tell passport if the passwords don't match
-        if (!bcrypt.compareSync(loginPassword, theUser.encryptedPassword)) {
+        if (!bcrypt.compareSync(loginPassword, theUser.password)) {
           next(null, false, {message: 'Wrong password, bitch! 😪'});
           return;
         }
 
         // give passport the user's details (SUCCESS!)
-        next(null, theUser, {message: `Login for ${theUser.username} was successful! 😎`});
+        next(null, theUser, {message: `Login for ${theUser.username} was successful!`});
       }
     );
   }

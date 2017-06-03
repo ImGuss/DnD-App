@@ -33,13 +33,33 @@ app.set('view engine', 'ejs');
 app.locals.title = 'Express - Generated with IronGenerator';
 
 // uncomment after placing your favicon in /public
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser());
+app.use(bodyParser.json());
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
+
+app.use( session( {
+  // this secret needs to be different every time. it could be anything
+  secret: 'this is the dnd app boiiiii',
+  resave: true,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(flash());
+
+// This middleware sets the user variable for all views if logged in so you don't need to add it to the render.
+app.use((req, res, next) => {
+  if (req.user) {
+    res.locals.user = req.user;
+  }
+  next();
+});
 
 
 // BEGIN ROUTES

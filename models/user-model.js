@@ -4,14 +4,14 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    firstName: {type: String, required: true},
+    firstName: {type: String},
     lastName: {type: String},
     username: {type: String},
     password: {type: String},
 
     // social login types
-    facebookID: {type: String},
-    googleID: {type: String}
+    facebookID: {type: String}
+    // googleID: {type: String}
   },
   {
     timestamps: true

@@ -24,7 +24,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Dungeons and Dragons</a>
+      <a class="navbar-brand" href="/">Dungeons and Dragons</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,46 +44,102 @@
       <!-- roll 20 button -->
         <button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-target="#roll20">Roll 20</button>
 
+
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/signup">Sign Up</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-          <ul id="login-dp" class="dropdown-menu">
-            <li>
-              <div class="row">
-                <div class="col-md-12">
-                  Login via
-                  <div class="social-buttons">
-                    <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                  </div>
-                  or
-                  <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                    <div class="form-group">
-                      <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+
+        <% if (typeof user === 'undefined') { %>
+
+          <!-- signup -->
+          <li class="dropdown">
+            <a href="/signup" class="dropdown-toggle" data-toggle="dropdown"><b>Sign Up</b> <span class="caret"></span></a>
+            <ul id="login-dp" class="dropdown-menu">
+              <li>
+                <div class="row">
+                  <div class="col-md-12">
+                    <form class="form" role="form" method="post" action="/signup" accept-charset="UTF-8" id="login-nav">
+                      <div class="form-group">
+                        <label for="signup-first-name" class="sr-only">First Name</label>
+                        <input id="signup-first-name" class="form-control" type="text" name="signupFirstName" placeholder="First Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="signup-last-name" class="sr-only">Last Name</label>
+                        <input id="signup-last-name" class="form-control" type="text" name="signupLastName" placeholder="Last Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="signup-username" class="sr-only">Username</label>
+                        <input id="signup-username" class="form-control" type="text" name="signupUsername" placeholder="Username">
+                      </div>
+                      <div class="form-group">
+                        <label class="sr-only" for="signup-password-input">Password</label>
+                        <input type="password" class="form-control" id="signup-password-input" placeholder="Password" name="signupPassword" required>
+                      </div>
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                      </div>
+                    </form> <!-- end form -->
+                  </div> <!-- end column -->
+                </div> <!-- end row -->
+              </li>
+            </ul> <!-- end login dropdown -->
+          </li> <!-- end dropdown -->
+
+          <!-- log in -->
+          <li class="dropdown">
+            <a href="/login" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+            <ul id="login-dp" class="dropdown-menu">
+              <li>
+                <div class="row">
+                  <div class="col-md-12">
+                    Login via
+                    <div class="social-buttons">
+                      <a href="/auth/facebook" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
                     </div>
-                    <div class="form-group">
-                      <label class="sr-only" for="exampleInputPassword2">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                      <div class="help-block text-right"><a href="">Forget your password?</a></div>
+                    or
+                    <form class="form" role="form" method="post" action="/login" accept-charset="UTF-8" id="login-nav">
+                      <div class="form-group">
+                        <label class="sr-only" for="username-login-input">Username</label>
+                        <input type="text" class="form-control" id="username-login-input" placeholder="Username address" name="usernameLoginInput" required>
+                      </div>
+                      <div class="form-group">
+                        <label class="sr-only" for="password-input">Password</label>
+                        <input type="password" class="form-control" id="password-input" placeholder="Password" name="passwordInput" required>
+                        <div class="help-block text-right"><a href="#">Forgot your password?</a></div>
+                      </div>
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> keep me logged-in
+                        </label>
+                      </div>
+                    </form> <!-- end form -->
+                    <div class="bottom text-center">
+                      New here ? <a href="/signup"><b>Join Us</b></a>
                     </div>
-                    <div class="form-group">
-                      <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox"> keep me logged-in
-                      </label>
-                    </div>
-                  </form> <!-- end form -->
-                  <div class="bottom text-center">
-                    New here ? <a href="/signup"><b>Join Us</b></a>
-                  </div>
-                </div> <!-- end column -->
-              </div> <!-- end row -->
-            </li>
-          </ul> <!-- end login dropdown -->
-        </li> <!-- end dropdown -->
+                  </div> <!-- end column -->
+                </div> <!-- end row -->
+              </li>
+            </ul> <!-- end login dropdown -->
+          </li> <!-- end dropdown -->
+        <% } else { %>
+          <!-- user info -->
+          <li class="dropdown">
+            <a href="/signup" class="dropdown-toggle" data-toggle="dropdown"><b><%= user.firstName %></b> <span class="caret"></span></a>
+            <ul id="login-dp" class="dropdown-menu">
+              <li>
+                <div class="form-group center">
+                  <a class="btn btn-info" href="/profile">Your Profile</a>
+                </div>
+              </li>
+              <li>
+                <div class="form-group center">
+                  <a class="btn btn-info" href="/logout">Logout</a>
+                </div>
+              </li>
+            </ul> <!-- end login dropdown -->
+          </li> <!-- end dropdown -->
+        <% } %>
       </ul> <!-- end right navbar-->
     </div><!-- end navbar-collapse -->
   </div><!-- end container-fluid -->

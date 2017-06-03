@@ -11,18 +11,18 @@ const authRoutes = express.Router();
 
 authRoutes.get('/signup', ensure.ensureNotLoggedIn('/'), (req, res, next) => {
 
-  res.render('auth/signup-view');
+  res.render('autho-views/signup-view');
 });
 
 // user signup
 authRoutes.post('/signup', ensure.ensureNotLoggedIn('/'), (req, res, next) => {
 
-  const signupUserName = req.body.signupUserName;
+  const signupUserName = req.body.signupUsername;
   const signupPassword = req.body.signupPassword;
 
   // Don't let users submit blank usernames or passwords
   if (signupUserName === '' || signupPassword === '') {
-    res.render('auth/signup-view', {
+    res.render('autho-views/signup-view', {
       errorMessage: 'Please provide both username and password'
     });
     return;
@@ -54,9 +54,10 @@ authRoutes.post('/signup', ensure.ensureNotLoggedIn('/'), (req, res, next) => {
 
       // Create the user
       const theUser = new User({
-        name: req.body.signupName,
-        username: req.body.signupUserName,
-        encryptedPassword: hashPass
+        firstName: req.body.signupFirstName,
+        lastName: req.body.signupLastName,
+        username: req.body.signupUsername,
+        password: hashPass
       });
 
       // Save the user
@@ -83,7 +84,7 @@ authRoutes.post('/signup', ensure.ensureNotLoggedIn('/'), (req, res, next) => {
 
 // user login
 authRoutes.get('/login', ensure.ensureNotLoggedIn('/'), (req, res, next) => {
-  res.render('auth/login-view', {
+  res.render('autho-views/login-view', {
     errorMessage: req.flash('error')
   });
 });
@@ -101,7 +102,7 @@ authRoutes.post('/login', passport.authenticate('local',
 authRoutes.get('/logout', (req, res, next) => {
   req.logout();
 
-  req.flash('success', 'You have logged out successfully 🤠');
+  req.flash('success', 'You have logged out successfully');
 
   res.redirect('/');
 });
@@ -118,17 +119,18 @@ authRoutes.get('/auth/facebook/callback', passport.authenticate('facebook', {
   failureRedirect: '/login'
 }));
 
-authRoutes.get('/auth/google', passport.authenticate('google', {
-  scope: [
-    "https://www.googleapis.com/auth/plus.login",
-    "https://www.googleapis.com/auth/plus.profile.emails.read"
-  ]
-}));
-
-authRoutes.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/',
-  failureRedirect: '/login'
-}));
+// google login
+// authRoutes.get('/auth/google', passport.authenticate('google', {
+//   scope: [
+//     "https://www.googleapis.com/auth/plus.login",
+//     "https://www.googleapis.com/auth/plus.profile.emails.read"
+//   ]
+// }));
+//
+// authRoutes.get('/auth/google/callback', passport.authenticate('google', {
+//   successRedirect: '/',
+//   failureRedirect: '/login'
+// }));
 
 
 module.exports = authRoutes;
