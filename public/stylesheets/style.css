@@ -1,5 +1,4 @@
 body {
-  padding: 0 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #F5F5F5;
 }
@@ -58,54 +57,3 @@ h1 {
 .merge-top-right-button {
   border-top-right-radius: 0;
 }
-
-/*.character-input-header {
-  float: left;
-}*/
-
-/*.character-input {
-  border: 1px solid black;
-  border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0);
-  margin-bottom: 10px;
-
-  height: 30px;
-  width: 165px;
-}
-
-.character-label {
-  border: 1px solid black;
-  border-radius: 3px;
-  margin-bottom: -1px;
-  background-color: rgba(255, 255, 255, 0);
-
-  height: 30px;
-  width: 165px;
-}
-
-.character-list-label {
-  border: 1px solid black;
-  border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0);
-
-  height: auto;
-  width: 165px;
-}
-
-.character-label-small {
-  width: 50px;
-}
-
-.character-list-label input {
-  width: 25px;
-  margin-left: 10px;
-  background-color: rgba(255, 255, 255, 0);
-  border: none;
-  border-bottom: 1px solid black;
-}*/
-
-/*.high {
-  width: 300px;
-  height: 300px;
-
-}*/
