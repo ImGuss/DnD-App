@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/stylesheets/reset.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/navbar-login.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="./favicon.ico">
@@ -52,11 +53,11 @@
           <!-- signup -->
           <li class="dropdown">
             <a href="/signup" class="dropdown-toggle" data-toggle="dropdown"><b>Sign Up</b> <span class="caret"></span></a>
-            <ul id="login-dp" class="dropdown-menu">
+            <ul class="dropdown-menu login-dp">
               <li>
                 <div class="row">
                   <div class="col-md-12">
-                    <form class="form" role="form" method="post" action="/signup" accept-charset="UTF-8" id="login-nav">
+                    <form class="form" role="form" method="post" action="/signup" accept-charset="UTF-8" id="sign-up-nav">
                       <div class="form-group">
                         <label for="signup-first-name" class="sr-only">First Name</label>
                         <input id="signup-first-name" class="form-control" type="text" name="signupFirstName" placeholder="First Name">
@@ -77,24 +78,26 @@
                         <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
                       </div>
                     </form> <!-- end form -->
+
                   </div> <!-- end column -->
                 </div> <!-- end row -->
               </li>
-            </ul> <!-- end login dropdown -->
+            </ul> <!-- end signup dropdown -->
           </li> <!-- end dropdown -->
 
           <!-- log in -->
           <li class="dropdown">
             <a href="/login" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-            <ul id="login-dp" class="dropdown-menu">
+            <ul class="dropdown-menu login-dp">
               <li>
                 <div class="row">
                   <div class="col-md-12">
                     Login via
-                    <div class="social-buttons">
+                    <div class="social-buttons center">
                       <a href="/auth/facebook" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
                     </div>
-                    or
+                    <h5 class="center">OR</h5>
+                    <div class="divider"></div>
                     <form class="form" role="form" method="post" action="/login" accept-charset="UTF-8" id="login-nav">
                       <div class="form-group">
                         <label class="sr-only" for="username-login-input">Username</label>
@@ -126,7 +129,7 @@
           <!-- user info -->
           <li class="dropdown">
             <a href="/signup" class="dropdown-toggle" data-toggle="dropdown"><b><%= user.firstName %></b> <span class="caret"></span></a>
-            <ul id="login-dp" class="dropdown-menu">
+            <ul class="dropdown-menu login-dp">
               <li>
                 <div class="form-group center">
                   <a class="btn btn-info" href="/profile">Your Profile</a>
@@ -196,10 +199,22 @@
 </div> <!-- end modal -->
 
 
-  <footer class="footer">
-    <div class="container">
-      Made with <span style="color: #ff9999">&hearts;</span> by Guss
-    </div>
+  <footer class="footer center">
+    <div class="row">
+      <div class="col-sm-6">
+        Made with <span style="color: #ff9999">&hearts;</span> by Guss
+      </div>
+      <div class="col-sm-6">
+        <i class="fa fa-github" aria-hidden="true"></i>
+        <a target="blank" class="show-link" href="https://github.com/ImGuss">GitHub</a>
+        |
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+        <a target="blank" class="show-link" href="https://www.linkedin.com/in/imguss/">LinkedIn</a>
+        |
+        <i class="fa fa-bug" aria-hidden="true"></i>
+        <a target="blank" class="show-link" href="https://github.com/ImGuss/DnD-App/issues/new">Bugs</a>?
+      </div>
+    </div> <!-- end row -->
   </footer>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
