@@ -1,25 +1,25 @@
-#login-dp{
+.login-dp{
     min-width: 250px;
     padding: 14px 14px 0;
     overflow:hidden;
-    background-color:rgba(255,255,255,.8);
+    background-color: #fff;
 }
-#login-dp .help-block{
+.login-dp .help-block{
     font-size:12px
 }
-#login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
+.login-dp .bottom{
+    background-color: #fff;
     border-top:1px solid #ddd;
     clear:both;
     padding:14px;
 }
-#login-dp .social-buttons{
+.login-dp .social-buttons{
     margin:12px 0
 }
-#login-dp .social-buttons a{
+.login-dp .social-buttons a{
     width: 49%;
 }
-#login-dp .form-group {
+.login-dp .form-group {
     margin-bottom: 10px;
 }
 .btn-fb{
@@ -39,11 +39,11 @@
     background-color:#59b5fa;
 }
 @media(max-width:768px){
-    #login-dp{
+    .login-dp{
         background-color: inherit;
         color: #fff;
     }
-    #login-dp .bottom{
+    .login-dp .bottom{
         background-color: inherit;
         border-top:0 none;
     }
