@@ -61,3 +61,8 @@ h1 {
 .merge-top-right-button {
   border-top-right-radius: 0;
 }
+
+.show-link, .show-link:hover {
+  color: black;
+  text-decoration: underline;
+}
