@@ -11,25 +11,28 @@ $('.minus-button').click( (e) => {
 
   const currentInput = $(e.currentTarget).parent().prev()[0];
 
+  // change this to whatever min value you want
+  const minValue = 8;
+
   let minusInputValue = $(currentInput).val();
 
   let pointBuyTotal = $('#point-buy-total').html();
 
-  if (minusInputValue > 8) {
+  if (minusInputValue > minValue) {
     minusInputValue --;
     pointBuyTotal ++;
     $($(e.currentTarget).next()).removeAttr('disabled');
     $('#point-buy-total').html(pointBuyTotal);
     $(currentInput).val(minusInputValue);
 
-    if (minusInputValue <= 8) {
+    if (minusInputValue <= minValue) {
       $(e.currentTarget).attr('disabled', 'disabled');
     }
 
     let allInputs = $('#point-buy input');
 
     for (let i = 0; i < allInputs.length; i++) {
-      if ($(allInputs[i]).val() < 15) {
+      if ($(allInputs[i]).val() < maxValue) {
         $($('#point-buy .btn-success')[i]).removeAttr('disabled');
       }
     }
@@ -40,20 +43,23 @@ $('.minus-button').click( (e) => {
 $('.plus-button').click( (e) => {
   e.preventDefault();
 
+  // change this to whatever max value you want
+  const maxValue = 15;
+
   const currentInput = $(e.currentTarget).parent().prev()[0];
 
   let plusInputValue = $(currentInput).val();
 
   let pointBuyTotal = $('#point-buy-total').html();
 
-  if (plusInputValue < 15 && pointBuyTotal > 0) {
+  if (plusInputValue < maxValue && pointBuyTotal > 0) {
     plusInputValue ++;
     pointBuyTotal --;
     $($(e.currentTarget).prev()[0]).removeAttr('disabled');
     $('#point-buy-total').html(pointBuyTotal);
     $(currentInput).val(plusInputValue);
 
-    if (plusInputValue >= 15) {
+    if (plusInputValue >= maxValue) {
       $(e.currentTarget).attr('disabled', 'disabled');
     }
 
