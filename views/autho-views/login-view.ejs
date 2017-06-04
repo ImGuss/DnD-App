@@ -1,5 +1,23 @@
-<h2>blah</h2>
+<h2 class="center">Log In</h2>
 
-<% if (errorMessage.length > 0) { %>
-  <div class="error"><%= errorMessage %></div>
-<% } %>
+<div class="row top-margin-50">
+  <div class="col-sm-4"></div>
+
+  <div class="col-sm-4">
+    <form class="form" action="/login" method="post">
+      <div class="form-group">
+        <label for="user-name">Username</label>
+        <input id ="user-name" type="text" class="form-control" name="usernameLoginInput" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label for="pass-word">Password</label>
+        <input id ="pass-word" type="text" class="form-control" name="passwordInput" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-sm-4"></div>
+</div>
