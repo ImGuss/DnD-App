@@ -2,30 +2,41 @@
 
 <div class="container">
 
-
-  <div class="row">
-    <div class="panel panel-default">
-      <div class="panel-body top-margin-15">
-        <% characters.forEach( (char) => { %>
-          <div class="col-sm-3">
-            <div class="panel panel-default">
-              <div class="panel-heading char-hover">
-                <a class="char-hover" href="/characters/<%= char._id %>">
-                  <h3 class="panel-title center"><%= char.firstName %> <%= char.lastName %></h3>
-                </a>
+  <% if (characters.length > 0) { %>
+    <div class="row">
+      <div class="panel panel-default">
+        <div class="panel-body top-margin-15">
+          <% characters.forEach( (char) => { %>
+            <div class="col-sm-3">
+              <div class="panel panel-default">
+                <div class="panel-heading char-hover">
+                  <a class="char-hover show-link" href="/characters/<%= char._id %>">
+                    <h3 class="panel-title center"><%= char.firstName %> <%= char.lastName %></h3>
+                  </a>
+                </div>
+                <div class="panel-body">
+                  <ul>
+                    <li><%= char.race %></li>
+                    <li><%= char.class %></li>
+                    <li><%= char.level %></li>
+                  </ul>
+                </div>
               </div>
-              <div class="panel-body">
-                <ul>
-                  <li><%= char.race %></li>
-                  <li><%= char.class %></li>
-                  <li><%= char.level %></li>
-                </ul>
-              </div>
-            </div>
-          </div> <!-- end column -->
-        <% }); %>
-      </div> <!-- end panel body -->
-    </div> <!--end panel -->
-  </div> <!-- end row -->
+            </div> <!-- end column -->
+          <% }); %>
+        </div> <!-- end panel body -->
+      </div> <!--end panel -->
+    </div> <!-- end row -->
+  <% } else { %>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-body center">
+            <p>You have no characters yet. <a class="show-link" href="/characters/new/basic">Create one</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% } %>
 
 </div> <!-- end container -->
