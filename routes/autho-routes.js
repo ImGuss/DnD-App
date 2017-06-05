@@ -43,7 +43,7 @@ authRoutes.post('/signup', ensure.ensureNotLoggedIn('/'), (req, res, next) => {
       // Don't let the user register if username is taken
       if (foundUser) {
         res.render('autho-views/signup-view', {
-          errorMessage: 'Username is taken, beeeitch.'
+          errorMessage: 'Username is taken.'
         });
         return;
       }

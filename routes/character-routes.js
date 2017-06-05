@@ -1,4 +1,5 @@
 const express = require('express');
+const ensure  = require('connect-ensure-login');
 
 const Character = require('../models/character-model');
 const User = require('../models/user-model');
@@ -6,7 +7,9 @@ const User = require('../models/user-model');
 const characterRoute = express.Router();
 
 // basic character creator get route
-characterRoute.get('/characters/new/basic', (req, res, next) => {
+characterRoute.get(
+  '/characters/new/basic',
+  (req, res, next) => {
   res.render('characters/create-character-basic-view');
 });
 
@@ -119,7 +122,10 @@ characterRoute.post('/characters/new', (req, res, next) => {
 });
 
 // show user's characters get route
-characterRoute.get('/characters', (req, res, next) => {
+characterRoute.get(
+  '/characters',
+  ensure.ensureLoggedIn('/login'),
+  (req, res, next) => {
 
   Character.find(
     {},
@@ -139,7 +145,10 @@ characterRoute.get('/characters', (req, res, next) => {
   });
 });
 
-characterRoute.get('/characters/:id', (req, res, next) => {
+characterRoute.get(
+  '/characters/:id',
+  ensure.ensureLoggedIn('/login'),
+  (req, res, next) => {
   const currentChar = req.params.id;
 
   Character.findById(
