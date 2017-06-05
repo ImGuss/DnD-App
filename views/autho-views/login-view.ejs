@@ -1,5 +1,22 @@
 <h2 class="center">Log In</h2>
 
+<% if (errorMessage.length > 0) { %>
+  <div class="row">
+    <div class="col-sm-3"></div>
+
+    <div class="col-sm-6">
+      <div class="panel panel-danger center">
+        <div class="panel-heading">
+          <p><%= errorMessage %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3"></div>
+
+  </div>
+<% } %>
+
 <div class="row top-margin-50">
   <div class="col-sm-4"></div>
 
@@ -11,7 +28,7 @@
       </div>
       <div class="form-group">
         <label for="pass-word">Password</label>
-        <input id ="pass-word" type="text" class="form-control" name="passwordInput" placeholder="Password">
+        <input id ="pass-word" type="password" class="form-control" name="passwordInput" placeholder="Password">
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block">Sign In</button>

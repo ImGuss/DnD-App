@@ -1,6 +1,40 @@
-<h1>DND APP</h1>
-<% if (typeof user !== 'undefined') { %>
-  <h2>Welcome, <%= user.firstName %></h2>
-<% } else { %>
-  <h2>Welcome to 5th Edition Character Sheet</h2>
-<% } %>
+<div class="container">
+  <h1>DND APP</h1>
+
+  <% if (successMessage.length > 0) { %>
+    <div id="success" class="row">
+      <div class="col-sm-3"></div>
+
+      <div class="col-sm-6">
+        <div class="panel panel-success center">
+          <div class="panel-heading">
+            <p><%= successMessage %></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3"></div>
+    </div>
+  <% } %>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-body center">
+          <% if (typeof user !== 'undefined') { %>
+            <h2>Welcome, <%= user.firstName %></h2>
+          <% } else { %>
+            <h2>Welcome to 5th Edition Character Sheet</h2>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div> <!-- end row -->
+</div> <!-- end container -->
+
+
+<script type="text/javascript">
+  setTimeout( () => {
+    $('#success').addClass('hide');
+  }, 3000);
+</script>

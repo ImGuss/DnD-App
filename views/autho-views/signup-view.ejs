@@ -1,5 +1,21 @@
 <h2 class="center">Sign Up</h2>
 
+<% if (typeof errorMessage !== 'undefined') { %>
+  <div class="row">
+    <div class="col-sm-3"></div>
+
+    <div class="col-sm-6">
+      <div class="panel panel-danger center">
+        <div class="panel-heading">
+          <p><%= errorMessage %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3"></div>
+  </div>
+<% } %>
+
 <div class="row top-margin-50">
   <div class="col-sm-4"></div>
 
@@ -7,25 +23,31 @@
     <form class="form" action="/signup" method="post">
       <div class="form-group">
         <label for="first-name-sign-up">First Name</label>
-        <input id ="first-name-sign-up" type="text" class="form-control" name="signupFirstName" placeholder="First Name">
+        <input id="first-name-sign-up" type="text" class="form-control" name="signupFirstName" placeholder="First Name">
       </div>
       <div class="form-group">
         <label for="last-name-sign-up">Last Name</label>
-        <input id ="last-name-sign-up" type="text" class="form-control" name="signupLastName" placeholder="Last Name">
+        <input id="last-name-sign-up" type="text" class="form-control" name="signupLastName" placeholder="Last Name">
       </div>
       <div class="form-group">
         <label for="user-name-sign-up">Username</label>
-        <input id ="user-name-sign-up" type="text" class="form-control" name="signupUsername" placeholder="Username">
+        <input id="user-name-sign-up" type="text" class="form-control" name="signupUsername" placeholder="Username">
       </div>
       <div class="form-group">
         <label for="pass-word-sign-up">Password</label>
-        <input id ="pass-word-sign-up" type="text" class="form-control" name="signupPassword" placeholder="Password">
+        <input id="pass-word-sign-up" type="password" class="form-control" name="signupPassword" placeholder="Password">
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+        <label for="pass-word-sign-up-confirm">Confirm password</label> <span id="hide" class="hide" style="color:red">Passwords do not match</span>
+        <input id="pass-word-sign-up-confirm" type="password" class="form-control" name="signupPasswordConfirm" placeholder="Confirm password">
+      </div>
+      <div class="form-group">
+        <button id="submit-signup" type="submit" class="btn btn-primary btn-block">Sign Up</button>
       </div>
     </form>
   </div>
 
   <div class="col-sm-4"></div>
 </div>
+
+<script type="text/javascript" src="/javascript/signup-checker.js"></script>

@@ -25,7 +25,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Dungeons and Dragons</a>
+      <a class="navbar-brand" href="/">5th Edition Character Sheet</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -75,7 +75,12 @@
                         <input type="password" class="form-control" id="signup-password-input" placeholder="Password" name="signupPassword" required>
                       </div>
                       <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                        <label class="sr-only" for="signup-password-input"> Confirm password</label>
+                        <div id="hide-nav" class="hide" style="color: red">Passwords do not match</div>
+                        <input type="password" class="form-control" id="signup-password-input-confirm" placeholder="Confirm password" name="signupPasswordConfirm" required>
+                      </div>
+                      <div class="form-group">
+                        <button id="nav-submit-signup" type="submit" class="btn btn-primary btn-block">Sign Up</button>
                       </div>
                     </form> <!-- end form -->
 
@@ -149,10 +154,27 @@
 </nav> <!-- end nav bar -->
 </header> <!-- end header -->
 
-
+<div class="wrapper">
   <%- body %>
 
-
+  <footer class="footer center">
+    <div class="row">
+      <div class="col-sm-6">
+        Made with <span style="color: #ff9999">&hearts;</span> by Guss
+      </div>
+      <div class="col-sm-6">
+        <i class="fa fa-github" aria-hidden="true"></i>
+        <a target="blank" class="show-link" href="https://github.com/ImGuss">GitHub</a>
+        |
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+        <a target="blank" class="show-link" href="https://www.linkedin.com/in/imguss/">LinkedIn</a>
+        |
+        <i class="fa fa-bug" aria-hidden="true"></i>
+        <a target="blank" class="show-link" href="https://github.com/ImGuss/DnD-App/issues/new">Bugs</a>?
+      </div>
+    </div> <!-- end row -->
+  </footer>
+</div> <!-- end wrapper -->
 
   <!-- Roll 20 Modal -->
 <div id="roll20" class="modal fade" role="dialog">
@@ -198,27 +220,8 @@
   </div>
 </div> <!-- end modal -->
 
-
-  <footer class="footer center">
-    <div class="row">
-      <div class="col-sm-6">
-        Made with <span style="color: #ff9999">&hearts;</span> by Guss
-      </div>
-      <div class="col-sm-6">
-        <i class="fa fa-github" aria-hidden="true"></i>
-        <a target="blank" class="show-link" href="https://github.com/ImGuss">GitHub</a>
-        |
-        <i class="fa fa-linkedin" aria-hidden="true"></i>
-        <a target="blank" class="show-link" href="https://www.linkedin.com/in/imguss/">LinkedIn</a>
-        |
-        <i class="fa fa-bug" aria-hidden="true"></i>
-        <a target="blank" class="show-link" href="https://github.com/ImGuss/DnD-App/issues/new">Bugs</a>?
-      </div>
-    </div> <!-- end row -->
-  </footer>
-
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="assets/twitterbootstrap/js/bootstrap-tab.js"></script>
+  <script type="text/javascript" src="/javascript/signup-checker.js"></script>
   <script type="text/javascript" src="/javascript/dice-roller.js"></script>
 </body>
 </html>
