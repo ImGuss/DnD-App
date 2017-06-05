@@ -8,7 +8,7 @@ const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 const session      = require('express-session');
 const passport     = require('passport');
-const flash        = require('flash');
+const flash        = require('connect-flash');
 
 const User         = require('./models/user-model');
 const Character    = require('./models/character-model');
@@ -51,8 +51,6 @@ app.use( session( {
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(flash());
-
 // This middleware sets the user variable for all views if logged in so you don't need to add it to the render.
 app.use((req, res, next) => {
   if (req.user) {
@@ -60,6 +58,8 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+app.use(flash());
 
 
 // BEGIN ROUTES
