@@ -19,107 +19,114 @@ characterRoute.get('/characters/new/easy', (req, res, next) => {
 });
 
 // save character post route
-characterRoute.post('/characters/new', (req, res, next) => {
+characterRoute.post(
+  '/characters/new',
+  ensure.ensureLoggedIn('/login'),
+  (req, res, next) => {
 
-  const newChar = new Character({
-    // basics
-    firstName: req.body.firstNameInput,
-    lastName: req.body.lastNameInput,
-    race: req.body.raceInput,
-    class: req.body.classInput,
-    background: req.body.backgroundInput,
-    alignment: req.body.alignmentInput,
-    level: req.body.levelInput,
-    currentXp: req.body.xpInput,
-    hitPoints: req.body.hpInput,
+    const newChar = new Character({
 
-    // ability
-    strength: req.body.strengthInput,
-    dexterity: req.body.dexInput,
-    constitution: req.body.constInput,
-    intelligence: req.body.intelInput,
-    wisdom: req.body.wisdomInput,
-    charisma: req.body.charismaInput,
-    perception: req.body.perceptionInput,
+      owner: req.user._id,
 
-    inspiration: req.body.inspInput,
+      // basics
+      firstName: req.body.firstNameInput,
+      lastName: req.body.lastNameInput,
+      race: req.body.raceInput,
+      class: req.body.classInput,
+      background: req.body.backgroundInput,
+      alignment: req.body.alignmentInput,
+      level: req.body.levelInput,
+      currentXp: req.body.xpInput,
+      hitPoints: req.body.hpInput,
 
-    proficiencyBonus: req.body.profInput,
+      // ability
+      strength: req.body.strengthInput,
+      dexterity: req.body.dexInput,
+      constitution: req.body.constInput,
+      intelligence: req.body.intelInput,
+      wisdom: req.body.wisdomInput,
+      charisma: req.body.charismaInput,
+      perception: req.body.perceptionInput,
 
-    // saving throws
-    savingStrength: req.body.strengthSavingInput,
-    savingDexterity: req.body.dexSavingInput,
-    savingConst: req.body.constSavingInput,
-    savingIntelligence: req.body.intelSavingInput,
-    savingWisdom: req.body.wisdomSavingInput,
-    savingCharisma: req.body.charismaSavingInput,
+      inspiration: req.body.inspInput,
 
-    // skills
-    acrobatics: req.body.acroInput,
-    animalHandling: req.body.animalHandlingInput,
-    arcana: req.body.arcanaInput,
-    athletics: req.body.athleticsInput,
-    deception: req.body.deceptionInput,
-    history: req.body.historyInput,
-    insight: req.body.insightInput,
-    intimidation: req.body.intimidationInput,
-    investigation: req.body.invInput,
-    medicine: req.body.medicineInput,
-    nature: req.body.natureInput,
-    skillsPerception: req.body.skillsPerceptionInput,
-    performance: req.body.performanceInput,
-    persuasion: req.body.skillsPersuasionInput,
-    religion: req.body.religionInput,
-    slightOfHand: req.body.slightInput,
-    stealth: req.body.skillsStealthInput,
-    survival: req.body.survivalInput,
+      proficiencyBonus: req.body.profInput,
 
-    armorClass: req.body.armorClassInput,
-    initiative: req.body.initInput,
-    speed: req.body.speedInput,
+      // saving throws
+      savingStrength: req.body.strengthSavingInput,
+      savingDexterity: req.body.dexSavingInput,
+      savingConst: req.body.constSavingInput,
+      savingIntelligence: req.body.intelSavingInput,
+      savingWisdom: req.body.wisdomSavingInput,
+      savingCharisma: req.body.charismaSavingInput,
 
-    tempHp: req.body.tempHpInput,
-    currentHp: req.body.currentHpInput,
-    // maxHp: req.body.Input,
-    hitDice: req.body.hitDiceInput,
+      // skills
+      acrobatics: req.body.acroInput,
+      animalHandling: req.body.animalHandlingInput,
+      arcana: req.body.arcanaInput,
+      athletics: req.body.athleticsInput,
+      deception: req.body.deceptionInput,
+      history: req.body.historyInput,
+      insight: req.body.insightInput,
+      intimidation: req.body.intimidationInput,
+      investigation: req.body.invInput,
+      medicine: req.body.medicineInput,
+      nature: req.body.natureInput,
+      skillsPerception: req.body.skillsPerceptionInput,
+      performance: req.body.performanceInput,
+      persuasion: req.body.skillsPersuasionInput,
+      religion: req.body.religionInput,
+      slightOfHand: req.body.slightInput,
+      stealth: req.body.skillsStealthInput,
+      survival: req.body.survivalInput,
 
-    // characteristics
-    // age: req.body,
-    // gender: req.body,
-    // height: req.body,
-    // weight: req.body,
-    // eyes: req.body,
-    // skin: req.body,
-    // hair: req.body,
+      armorClass: req.body.armorClassInput,
+      initiative: req.body.initInput,
+      speed: req.body.speedInput,
 
-    // abilities
-    // abilityScore: req.body,
-    // abilityMod: req.body,
-    // savingSuccess: req.body,
-    // savingFailure: req.body,
+      tempHp: req.body.tempHpInput,
+      currentHp: req.body.currentHpInput,
+      // maxHp: req.body.Input,
+      hitDice: req.body.hitDiceInput,
 
-    attacksAndSpells: req.body.attacksSpellsInput,
-    equipment: req.body.equipmentInput,
+      // characteristics
+      // age: req.body,
+      // gender: req.body,
+      // height: req.body,
+      // weight: req.body,
+      // eyes: req.body,
+      // skin: req.body,
+      // hair: req.body,
 
-    personalityTraits: req.body.personalityInput,
-    ideals: req.body.idealsInput,
-    bonds: req.body.bondsInput,
-    flaws: req.body.flawsInput,
+      // abilities
+      // abilityScore: req.body,
+      // abilityMod: req.body,
+      // savingSuccess: req.body,
+      // savingFailure: req.body,
 
-    features: req.body.featuresInput,
+      attacksAndSpells: req.body.attacksSpellsInput,
+      equipment: req.body.equipmentInput,
 
-    otherProfLang: req.body.otherProfInput,
-  });
+      personalityTraits: req.body.personalityInput,
+      ideals: req.body.idealsInput,
+      bonds: req.body.bondsInput,
+      flaws: req.body.flawsInput,
 
-  newChar.save( (err) => {
-    if (err) {
-      next(err);
-      return;
-    }
+      features: req.body.featuresInput,
 
-    res.redirect('/');
-  });
-});
+      otherProfLang: req.body.otherProfInput,
+    });
+
+    newChar.save( (err) => {
+      if (err) {
+        next(err);
+        return;
+      }
+
+      res.redirect('/characters');
+    });
+  }
+);
 
 // show user's characters get route
 characterRoute.get(
@@ -128,7 +135,7 @@ characterRoute.get(
   (req, res, next) => {
 
   Character.find(
-    {},
+    {owner: req.user._id},
     {
       firstName: 1, lastName: 1, race: 1, class: 1, level: 1
     },
