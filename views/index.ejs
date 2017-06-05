@@ -1,5 +1,4 @@
 <div class="container">
-  <h1>DND APP</h1>
 
   <% if (successMessage.length > 0) { %>
     <div id="success" class="row">
@@ -22,13 +21,37 @@
       <div class="panel panel-default">
         <div class="panel-body center">
           <% if (typeof user !== 'undefined') { %>
-            <h2>Welcome, <%= user.firstName %></h2>
+            <h2>Welcome to 5th Edition Character Sheet Creator, <%= user.firstName %></h2>
           <% } else { %>
-            <h2>Welcome to 5th Edition Character Sheet</h2>
+            <h2>Welcome to 5th Edition Character Sheet!</h2>
           <% } %>
         </div>
       </div>
     </div>
+  </div> <!-- end row -->
+
+  <div class="row top-margin-15">
+
+    <div class="col-sm-7">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h2 class="center">About</h2>
+          <p>This app is for beginners looking for an easy way to fill out their character sheet.</p>
+        </div>
+      </div>
+    </div> <!-- end column -->
+
+    <div class="col-sm-5">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h2 class="center">Coming Soon</h2>
+          <ul>
+            <li><i class="fa fa-circle" aria-hidden="true"></i> Easy Character Creator</li>
+            <li><i class="fa fa-circle" aria-hidden="true"></i> Save to downloadable PDF</li>
+          </ul>
+        </div>
+      </div>
+    </div> <!-- end column -->
   </div> <!-- end row -->
 </div> <!-- end container -->
 
