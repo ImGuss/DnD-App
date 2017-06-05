@@ -164,13 +164,13 @@ passport.use(new LocalStrategy(
         // tell passport if there is no user with given username
         if (!theUser) {
           //           vvv 2nd arg means that login failed
-          next(null, false, {message: 'Wrong username, buddy. 😪'});
+          next(null, false, {message: 'Incorrect username or password' });
           return;
         }
 
         // tell passport if the passwords don't match
         if (!bcrypt.compareSync(loginPassword, theUser.password)) {
-          next(null, false, {message: 'Wrong password, bitch! 😪'});
+          next(null, false, {message: 'Incorrect username or password' });
           return;
         }
 
