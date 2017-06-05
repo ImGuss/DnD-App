@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-success">
+        <div class="panel-body">
+          <h2 class="center"><%= user.firstName %>'s Profile</h2>
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+    </div> <!-- end column -->
+  </div> <!-- end row -->
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h4 class="center">Your Details</h4>
+          <ul>
+            <li>First Name: <%= user.firstName %></li>
+            <li>Last Name: <%= user.lastName %></li>
+            <li>Username: <%= user.username %></li>
+            <a href="/profile/edit">Edit</a>
+          </ul>
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+    </div>
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <% if (characters.length > 0) { %>
+            <h4 class="center">Characters</h4>
+            <ul>
+              <% characters.forEach( (char) => { %>
+                <li><a href="/characters/<%= char._id %>"><%= char.firstName %></a></li>
+              <% }) %>
+            </ul>
+          <% } else { %>
+            <p>You have no characters yet. Want to <a class="show-link" href="/characters/new/basic">create one</a>?</p>
+          <% } %>
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+    </div> <!-- end column -->
+  </div> <!-- end row -->
+
+
+</div> <!-- end container -->
