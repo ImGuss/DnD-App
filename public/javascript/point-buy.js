@@ -13,6 +13,7 @@ $('.minus-button').click( (e) => {
 
   // change this to whatever min value you want
   const minValue = 8;
+  const maxValue = 15;
 
   let minusInputValue = $(currentInput).val();
 
@@ -52,14 +53,14 @@ $('.plus-button').click( (e) => {
 
   let pointBuyTotal = $('#point-buy-total').html();
 
-  if (plusInputValue < maxValue && pointBuyTotal > 0) {
+  if (plusInputValue < 15 && pointBuyTotal > 0) {
     plusInputValue ++;
     pointBuyTotal --;
     $($(e.currentTarget).prev()[0]).removeAttr('disabled');
     $('#point-buy-total').html(pointBuyTotal);
     $(currentInput).val(plusInputValue);
 
-    if (plusInputValue >= maxValue) {
+    if (plusInputValue >= 15) {
       $(e.currentTarget).attr('disabled', 'disabled');
     }
 
