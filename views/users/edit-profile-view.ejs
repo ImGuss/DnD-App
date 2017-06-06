@@ -1,0 +1,51 @@
+<div class="container">
+  <h2>Edit Profile</h2>
+
+  <div class="row">
+
+    <div class="col-sm-3"></div>
+
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form class="form" action="/profile/edit" method="post">
+            <div class="form-group">
+              <label for="edit-first-name">First name</label>
+              <input id="edit-first-name" class="form-control" type="text" name="editFirstName" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <label for="edit-last-name">Last name</label>
+              <input id="edit-last-name" class="form-control" type="text" name="editLastName" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+              <label for="edit-username">Username</label>
+              <input id="edit-username" class="form-control" type="text" name="editUsername" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <label for="edit-password">New password</label>
+              <input id="edit-password" class="form-control" type="password" name="editPassword" placeholder="New password">
+            </div>
+            <div class="form-group">
+              <label for="edit-password-confirm">Confrim password</label>
+              <span id="hide-edit" class="hide" style="color: red">Password does not match</span>
+              <input id="edit-password-confirm" class="form-control" type="password" name="editPasswordConfirm" placeholder="Confirm password">
+            </div>
+            <div class="form-group">
+              <label for="edit-password-validate">Type password to save changes</label>
+              <input id="edit-password-validate" class="form-control" type="password" name="editPasswordValidate" placeholder="Type password to save changes">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-success center" id="edit-submit">Submit</button>
+            </div>
+          </form>
+        </div> <!-- end panel body -->
+      </div> <!-- end panel -->
+    </div> <!-- end column -->
+
+    <div class="col-sm-3"></div>
+
+  </div> <!-- end row -->
+
+</div> <!-- end container -->
+
+<script type="text/javascript" src="/javascript/signup-checker.js"></script>
