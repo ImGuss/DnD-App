@@ -13,168 +13,178 @@
 </head>
 
 <body>
-<header>
-<!-- begin nav bar -->
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">5th Edition Character Sheet</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="/characters">Your Characters</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">New Character <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/characters/new/basic">New Character</a></li>
-            <li class="disabled"><a href="/characters/new/easy">New Character Easy (In Progress)</a></li>
-          </ul>
-        </li>
-      </ul> <!-- end nav navbar-nav -->
-
-      <!-- roll 20 button -->
-        <button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-target="#roll20">Roll Dice</button>
-
-
-      <ul class="nav navbar-nav navbar-right">
-
-        <% if (typeof user === 'undefined') { %>
-
-          <!-- signup -->
-          <li class="dropdown">
-            <a href="/signup" class="dropdown-toggle" data-toggle="dropdown"><b>Sign Up</b> <span class="caret"></span></a>
-            <ul class="dropdown-menu login-dp">
-              <li>
-                <div class="row">
-                  <div class="col-md-12">
-                    <form class="form" role="form" method="post" action="/signup" accept-charset="UTF-8" id="sign-up-nav">
-                      <div class="form-group">
-                        <label for="signup-first-name" class="sr-only">First Name</label>
-                        <input id="signup-first-name" class="form-control" type="text" name="signupFirstName" placeholder="First Name">
-                      </div>
-                      <div class="form-group">
-                        <label for="signup-last-name" class="sr-only">Last Name</label>
-                        <input id="signup-last-name" class="form-control" type="text" name="signupLastName" placeholder="Last Name">
-                      </div>
-                      <div class="form-group">
-                        <label for="signup-username" class="sr-only">Username</label>
-                        <input id="signup-username" class="form-control" type="text" name="signupUsername" placeholder="Username">
-                      </div>
-                      <div class="form-group">
-                        <label class="sr-only" for="signup-password-input">Password</label>
-                        <input type="password" class="form-control" id="signup-password-input" placeholder="Password" name="signupPassword" required>
-                      </div>
-                      <div class="form-group">
-                        <label class="sr-only" for="signup-password-input"> Confirm password</label>
-                        <div id="hide-nav" class="hide" style="color: red">Passwords do not match</div>
-                        <input type="password" class="form-control" id="signup-password-input-confirm" placeholder="Confirm password" name="signupPasswordConfirm" required>
-                      </div>
-                      <div class="form-group">
-                        <button id="nav-submit-signup" type="submit" class="btn btn-primary btn-block">Sign Up</button>
-                      </div>
-                    </form> <!-- end form -->
-
-                  </div> <!-- end column -->
-                </div> <!-- end row -->
-              </li>
-            </ul> <!-- end signup dropdown -->
-          </li> <!-- end dropdown -->
-
-          <!-- log in -->
-          <li class="dropdown">
-            <a href="/login" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-            <ul class="dropdown-menu login-dp">
-              <li>
-                <div class="row">
-                  <div class="col-md-12">
-                    Login via
-                    <div class="social-buttons center">
-                      <a href="/auth/facebook" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                    </div>
-                    <h5 class="center">OR</h5>
-                    <div class="divider"></div>
-                    <form class="form" role="form" method="post" action="/login" accept-charset="UTF-8" id="login-nav">
-                      <div class="form-group">
-                        <label class="sr-only" for="username-login-input">Username</label>
-                        <input type="text" class="form-control" id="username-login-input" placeholder="Username address" name="usernameLoginInput" required>
-                      </div>
-                      <div class="form-group">
-                        <label class="sr-only" for="password-input">Password</label>
-                        <input type="password" class="form-control" id="password-input" placeholder="Password" name="passwordInput" required>
-                        <div class="help-block text-right"><a href="#">Forgot your password?</a></div>
-                      </div>
-                      <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> keep me logged-in
-                        </label>
-                      </div>
-                    </form> <!-- end form -->
-                    <div class="bottom text-center">
-                      New here ? <a href="/signup"><b>Join Us</b></a>
-                    </div>
-                  </div> <!-- end column -->
-                </div> <!-- end row -->
-              </li>
-            </ul> <!-- end login dropdown -->
-          </li> <!-- end dropdown -->
-        <% } else { %>
-          <!-- user info -->
-          <li class="dropdown">
-            <a href="/signup" class="dropdown-toggle" data-toggle="dropdown"><b><%= user.firstName %></b> <span class="caret"></span></a>
-            <ul class="dropdown-menu login-dp">
-              <li>
-                <div class="form-group center">
-                  <a class="btn btn-info" href="/profile">Your Profile</a>
-                </div>
-              </li>
-              <li>
-                <div class="form-group center">
-                  <a class="btn btn-info" href="/logout">Logout</a>
-                </div>
-              </li>
-            </ul> <!-- end login dropdown -->
-          </li> <!-- end dropdown -->
-        <% } %>
-      </ul> <!-- end right navbar-->
-    </div><!-- end navbar-collapse -->
-  </div><!-- end container-fluid -->
-</nav> <!-- end nav bar -->
-</header> <!-- end header -->
-
 <div class="wrapper">
-  <%- body %>
+  <div class="top-div">
+    <header>
+    <!-- begin nav bar -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">5th Edition Character Sheet</a>
+        </div>
 
-  <footer class="footer center">
-    <div class="row">
-      <div class="col-sm-6">
-        Made with <span style="color: #ff9999">&hearts;</span> by Guss
-      </div>
-      <div class="col-sm-6">
-        <i class="fa fa-github" aria-hidden="true"></i>
-        <a target="blank" class="show-link" href="https://github.com/ImGuss">GitHub</a>
-        |
-        <i class="fa fa-linkedin" aria-hidden="true"></i>
-        <a target="blank" class="show-link" href="https://www.linkedin.com/in/imguss/">LinkedIn</a>
-        |
-        <i class="fa fa-bug" aria-hidden="true"></i>
-        <a target="blank" class="show-link" href="https://github.com/ImGuss/DnD-App/issues/new">Bugs</a>?
-      </div>
-    </div> <!-- end row -->
-  </footer>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
+            <li><a href="/characters">Your Characters</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">New Character <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/characters/new/basic">New Character</a></li>
+                <li class="disabled"><a href="/characters/new/easy">New Character Easy (In Progress)</a></li>
+              </ul>
+            </li>
+          </ul> <!-- end nav navbar-nav -->
+
+          <!-- roll 20 button -->
+            <button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-target="#roll20">Roll Dice</button>
+
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <% if (typeof user === 'undefined') { %>
+
+              <!-- signup -->
+              <li class="dropdown">
+                <a href="/signup" class="dropdown-toggle" data-toggle="dropdown"><b>Sign Up</b> <span class="caret"></span></a>
+                <ul class="dropdown-menu login-dp">
+                  <li>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <form class="form" role="form" method="post" action="/signup" accept-charset="UTF-8" id="sign-up-nav">
+                          <div class="form-group">
+                            <label for="signup-first-name" class="sr-only">First Name</label>
+                            <input id="signup-first-name" class="form-control" type="text" name="signupFirstName" placeholder="First Name">
+                          </div>
+                          <div class="form-group">
+                            <label for="signup-last-name" class="sr-only">Last Name</label>
+                            <input id="signup-last-name" class="form-control" type="text" name="signupLastName" placeholder="Last Name">
+                          </div>
+                          <div class="form-group">
+                            <label for="signup-username" class="sr-only">Username</label>
+                            <input id="signup-username" class="form-control" type="text" name="signupUsername" placeholder="Username">
+                          </div>
+                          <div class="form-group">
+                            <label class="sr-only" for="signup-password-input">Password</label>
+                            <input type="password" class="form-control" id="signup-password-input" placeholder="Password" name="signupPassword" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="sr-only" for="signup-password-input"> Confirm password</label>
+                            <div id="hide-nav" class="hide" style="color: red">Passwords do not match</div>
+                            <input type="password" class="form-control" id="signup-password-input-confirm" placeholder="Confirm password" name="signupPasswordConfirm" required>
+                          </div>
+                          <div class="form-group">
+                            <button id="nav-submit-signup" type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                          </div>
+                        </form> <!-- end form -->
+
+                      </div> <!-- end column -->
+                    </div> <!-- end row -->
+                  </li>
+                </ul> <!-- end signup dropdown -->
+              </li> <!-- end dropdown -->
+
+              <!-- log in -->
+              <li class="dropdown">
+                <a href="/login" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                <ul class="dropdown-menu login-dp">
+                  <li>
+                    <div class="row">
+                      <div class="col-md-12">
+                        Login via
+                        <div class="social-buttons center">
+                          <a href="/auth/facebook" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                        </div>
+                        <h5 class="center">OR</h5>
+                        <div class="divider"></div>
+                        <form class="form" role="form" method="post" action="/login" accept-charset="UTF-8" id="login-nav">
+                          <div class="form-group">
+                            <label class="sr-only" for="username-login-input">Username</label>
+                            <input type="text" class="form-control" id="username-login-input" placeholder="Username address" name="usernameLoginInput" required>
+                          </div>
+                          <div class="form-group">
+                            <label class="sr-only" for="password-input">Password</label>
+                            <input type="password" class="form-control" id="password-input" placeholder="Password" name="passwordInput" required>
+                            <div class="help-block text-right"><a href="#">Forgot your password?</a></div>
+                          </div>
+                          <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"> keep me logged-in
+                            </label>
+                          </div>
+                        </form> <!-- end form -->
+                        <div class="bottom text-center">
+                          New here ? <a href="/signup"><b>Join Us</b></a>
+                        </div>
+                      </div> <!-- end column -->
+                    </div> <!-- end row -->
+                  </li>
+                </ul> <!-- end login dropdown -->
+              </li> <!-- end dropdown -->
+            <% } else { %>
+              <!-- user info -->
+              <li class="dropdown">
+                <a href="/signup" class="dropdown-toggle" data-toggle="dropdown"><b><%= user.firstName %></b> <span class="caret"></span></a>
+                <ul class="dropdown-menu login-dp">
+                  <li>
+                    <div class="form-group center">
+                      <a class="btn btn-info" href="/profile">Your Profile</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-group center">
+                      <a class="btn btn-info" href="/logout">Logout</a>
+                    </div>
+                  </li>
+                </ul> <!-- end login dropdown -->
+              </li> <!-- end dropdown -->
+            <% } %>
+          </ul> <!-- end right navbar-->
+        </div><!-- end navbar-collapse -->
+      </div><!-- end container-fluid -->
+    </nav> <!-- end nav bar -->
+    </header> <!-- end header -->
+  </div> <!-- end top-div -->
+
+  <div class="middle-div">
+    <%- body %>
+  </div> <!-- end middle-div -->
+
+  <div class="footer-div">
+    <footer class="center">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            Made with <span style="color: #ff9999">&hearts;</span> by Guss
+          </div>
+          <div class="col-sm-6">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <a target="blank" class="show-link" href="https://github.com/ImGuss">GitHub</a>
+            |
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+            <a target="blank" class="show-link" href="https://www.linkedin.com/in/imguss/">LinkedIn</a>
+            |
+            <i class="fa fa-bug" aria-hidden="true"></i>
+            <a target="blank" class="show-link" href="https://github.com/ImGuss/DnD-App/issues/new">Bugs</a>?
+          </div>
+        </div> <!-- end row -->
+      </div> <!-- enc container -->
+    </footer> <!-- end footer -->
+  </div> <!-- end footer-div -->
+
 </div> <!-- end wrapper -->
+
 
   <!-- Roll 20 Modal -->
 <div id="roll20" class="modal fade" role="dialog">
