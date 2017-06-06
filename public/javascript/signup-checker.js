@@ -23,4 +23,16 @@ $(document).ready( () => {
     }
   });
 
+
+  $('#edit-password-confirm').on('keyup', (e) => {
+    if ( $('#edit-password-confirm').val() !== $('#edit-password').val() ) {
+      $('#hide-edit').removeClass('hide');
+      $('#edit-submit').attr('disabled', 'true');
+    }
+    else {
+      $('#hide-edit').addClass('hide');
+      $('#edit-submit').removeAttr('disabled');
+    }
+  });
+
 });
