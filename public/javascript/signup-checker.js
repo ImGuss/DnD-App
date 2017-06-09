@@ -1,5 +1,6 @@
 $(document).ready( () => {
 
+  // signup page
   $('#pass-word-sign-up-confirm').on('keyup', (e) => {
     if ( $('#pass-word-sign-up-confirm').val() !== $('#pass-word-sign-up').val() ) {
       $('#hide').removeClass('hide');
@@ -11,7 +12,7 @@ $(document).ready( () => {
     }
   });
 
-
+  // signup nav
   $('#signup-password-input-confirm').on('keyup', (e) => {
     if ( $('#signup-password-input-confirm').val() !== $('#signup-password-input').val() ) {
       $('#hide-nav').removeClass('hide');
@@ -23,7 +24,7 @@ $(document).ready( () => {
     }
   });
 
-
+  // edit profile
   $('#edit-password-confirm').on('keyup', (e) => {
     if ( $('#edit-password-confirm').val() !== $('#edit-password').val() ) {
       $('#hide-edit').removeClass('hide');

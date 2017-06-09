@@ -46,16 +46,38 @@
           <form class="form" action="/profile/edit" method="post">
             <div class="form-group">
               <label for="edit-first-name">First name</label>
-              <input id="edit-first-name" class="form-control" type="text" name="editFirstName" placeholder="First Name">
+              <input id="edit-first-name" class="form-control" type="text" name="editFirstName" value="<%= user.firstName %>">
             </div>
+
             <div class="form-group">
               <label for="edit-last-name">Last name</label>
-              <input id="edit-last-name" class="form-control" type="text" name="editLastName" placeholder="Last Name">
+              <input id="edit-last-name" class="form-control" type="text" name="editLastName" value="<%= user.lastName %>">
             </div>
-            <div class="form-group">
-              <label for="edit-username">Username</label>
-              <input id="edit-username" class="form-control" type="text" name="editUsername" placeholder="Username">
-            </div>
+
+            <% if (user.facebookID !== null) { %>
+
+              <div class="form-group">
+                <label for="edit-username">Username</label>
+                <input id="edit-username" class="form-control" type="text" name="editUsername" value="<%= user.username %>">
+              </div>
+
+              <div class="form-group">
+                <label for="edit-password">New Password</label>
+                <input id="edit-password" class="form-control" type="password" name="editPassword" placeholder="New Password">
+              </div>
+
+              <div class="form-group">
+                <label for="edit-password-confirm">Confirm Password</label>
+                <span id="hide-edit" class="hide" style="color: red">Passwords do not match</span>
+                <input id="edit-password-confirm" class="form-control" type="password" name="editPasswordConfirm" placeholder="Confirm Password">
+              </div>
+
+              <div class="form-group">
+                <label for="edit-username">Type password to save changes</label>
+                <input id="validate-password" class="form-control" type="password" name="validatePassword" placeholder="Type password to save changes">
+              </div>
+            <% } %>
+
             <div class="form-group">
               <button class="btn btn-success center" id="edit-submit">Submit</button>
             </div>
