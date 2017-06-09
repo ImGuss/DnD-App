@@ -51,7 +51,7 @@ userRoute.post(
   ensure.ensureLoggedIn('/login'),
   (req, res, next) => {
 
-
+    // check if validation password is the same as user's password
     const samePass = bcrypt.compareSync(req.body.validatePassword, req.user.password);
 
     // if validation fails redirect with error
@@ -65,9 +65,11 @@ userRoute.post(
     // if validation succeeds....
     if (samePass) {
 
+      // check if new password is equal to user's password
       const equalPass = bcrypt.compareSync(req.body.editPassword, req.user.password);
 
-      // if edit password and user password are different AND edit password is not empty...
+
+      // if edit password is not empty AND edit password and user password are different save all 4 fields
       if (req.body.editPassword !== '' && !equalPass) {
         const salt = bcrypt.genSaltSync(10);
         const hashPass = bcrypt.hashSync(req.body.editPassword, salt);
@@ -97,6 +99,7 @@ userRoute.post(
         );
       }
 
+      // if edit password is empty only save the other 3 fields
       if (req.body.editPassword === '') {
 
         User.findByIdAndUpdate(
