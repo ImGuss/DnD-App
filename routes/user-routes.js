@@ -64,11 +64,11 @@ userRoute.post(
           if (err) {
             next(err);
             return;
-          }
+          } else {
 
-          req.flash('success', 'Your details have been saved');
-          res.redirect('/profile/edit');
-          return;
+            req.flash('success', 'Your details have been saved');
+            res.redirect('/profile/edit');
+          }
         }
       );
     }
