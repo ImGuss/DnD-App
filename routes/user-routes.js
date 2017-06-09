@@ -58,9 +58,7 @@ userRoute.post(
           firstName:
             req.body.editFirstName === '' ? req.user.firstName : req.body.editFirstName,
           lastName:
-            req.body.editLastName === '' ? req.user.lastName : req.body.editLastName,
-          username:
-            req.body.editUsername === '' ? req.user.username : req.body.editUsername,
+            req.body.editLastName === '' ? req.user.lastName : req.body.editLastName
         },
         (err, user) => {
           if (err) {
