@@ -71,6 +71,7 @@ userRoute.post(
           return;
         }
       );
+      return;
     }
 
     // check if validation password is the same as user's password
