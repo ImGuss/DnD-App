@@ -51,7 +51,7 @@ userRoute.post(
   ensure.ensureLoggedIn('/login'),
   (req, res, next) => {
 
-    
+
     const samePass = bcrypt.compareSync(req.body.validatePassword, req.user.password);
 
     // if validation fails redirect with error
@@ -59,6 +59,7 @@ userRoute.post(
       req.flash('error', 'Your password didn\'t match!');
 
       res.redirect('/profile/edit');
+      return;
     }
 
     // if validation succeeds....
@@ -91,6 +92,7 @@ userRoute.post(
 
             req.flash('success', 'Your details have been saved');
             res.redirect('/profile/edit');
+            return;
           }
         );
       }
@@ -115,9 +117,9 @@ userRoute.post(
 
             req.flash('success', 'Your details have been saved');
             res.redirect('/profile/edit');
+            return;
           }
         );
-
       }
     }
   }
