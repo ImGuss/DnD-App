@@ -51,6 +51,30 @@ userRoute.post(
   ensure.ensureLoggedIn('/login'),
   (req, res, next) => {
 
+    if (req.user.facebookID) {
+      User.findByIdAndUpdate(
+        req.user._id,
+        {
+          firstName:
+            req.body.editFirstName === '' ? req.user.firstName : req.body.editFirstName,
+          lastName:
+            req.body.editLastName === '' ? req.user.lastName : req.body.editLastName,
+          username:
+            req.body.editUsername === '' ? req.user.username : req.body.editUsername,
+        },
+        (err, user) => {
+          if (err) {
+            next(err);
+            return;
+          }
+
+          req.flash('success', 'Your details have been saved');
+          res.redirect('/profile/edit');
+          return;
+        }
+      );
+    }
+
     // check if validation password is the same as user's password
     const samePass = bcrypt.compareSync(req.body.validatePassword, req.user.password);
 
