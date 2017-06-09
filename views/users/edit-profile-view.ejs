@@ -54,7 +54,7 @@
               <input id="edit-last-name" class="form-control" type="text" name="editLastName" value="<%= user.lastName %>">
             </div>
 
-            <% if (user.facebookID !== null) { %>
+            <% if (!user.facebookID) { %>
 
               <div class="form-group">
                 <label for="edit-username">Username</label>
