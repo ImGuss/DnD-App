@@ -68,6 +68,7 @@ userRoute.post(
 
           req.flash('success', 'Your details have been saved');
           res.redirect('/profile/edit');
+          return;
         }
       );
     }
