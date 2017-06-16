@@ -101,3 +101,9 @@ body {
   left: 0;
   height: 25px;
 }
+
+.ability-small {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
