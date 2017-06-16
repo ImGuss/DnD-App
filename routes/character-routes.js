@@ -15,7 +15,7 @@ characterRoute.get(
 
 // easy character creator get route
 characterRoute.get('/characters/new/easy', (req, res, next) => {
-  res.render('characters/new-char-easy-view');
+  res.render('characters/create-char-easy-view');
 });
 
 // save character post route
