@@ -40,13 +40,21 @@ characterRoute.post(
       hitPoints: req.body.hpInput,
 
       // ability
+      strengthMod: req.body.strengthInputMod,
       strength: req.body.strengthInput,
+      dexterityMod: req.body.dexInputMod,
       dexterity: req.body.dexInput,
+      constitutionMod: req.body.constInputMod,
       constitution: req.body.constInput,
+      intelligenceMod: req.body.intelInputMod,
       intelligence: req.body.intelInput,
+      wisdomMod: req.body.wisdomInputMod,
       wisdom: req.body.wisdomInput,
+      charismaMod: req.body.charismaInputMod,
       charisma: req.body.charismaInput,
+
       perception: req.body.perceptionInput,
+
 
       inspiration: req.body.inspInput,
 

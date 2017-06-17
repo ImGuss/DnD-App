@@ -16,14 +16,27 @@ const characterSchema = new Schema(
     currentXp: {type: Number},
     hitPoints: {type: Number}, // required
 
-    // values
+    // ability
     strength: {type: Number},
+    strengthMod: {type: Number},
+
     dexterity: {type: Number},
+    dexterityMod: {type: Number},
+
     constitution: {type: Number},
+    constitutionMod: {type: Number},
+
     intelligence: {type: Number},
+    intelligenceMod: {type: Number},
+
     wisdom: {type: Number},
+    wisdomMod: {type: Number},
+
     charisma: {type: Number},
+    charismaMod: {type: Number},
+
     perception: {type: Number},
+
 
     inspiration: {type: Boolean, default: false},
 
