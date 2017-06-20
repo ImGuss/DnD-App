@@ -107,3 +107,12 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.small-box {
+  height: 50px;
+  margin: 0;
+}
+
+#single-ability .list-group {
+  text-align: center;
+}

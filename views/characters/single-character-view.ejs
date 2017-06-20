@@ -79,69 +79,70 @@
   <div class="row top-margin-25">
     <div class="col-lg-2">
       <div class="panel panel-default">
-        <div class="panel-body">
+        <div id="single-ability" class="panel-body">
           <h4 class="center">Ability</h4>
 
           <!-- ABILITY -->
           <h4>Strength</h4>
-          <%= char.strength %>
+
+          <div class="list-group">
+            <div class="list-group-item">
+              <h4><%= char.strengthMod %></h4>
+            </div>
+            <div class="list-group-item">
+              <p><%= char.strength %></p>
+            </div>
+          </div>
 
           <h4>Dexterity</h4>
-          <%= char.dexterity %>
+          <div class="list-group">
+            <div class="list-group-item">
+              <h4><%= char.dexterityMod %></h4>
+            </div>
+            <div class="list-group-item">
+              <p><%= char.dexterity %></p>
+            </div>
+          </div>
 
           <h4>Constitution</h4>
-          <%= char.constitution %>
+          <div class="list-group">
+            <div class="list-group-item">
+              <h4><%= char.constitutionMod %></h4>
+            </div>
+            <div class="list-group-item">
+              <p><%= char.constitution %></p>
+            </div>
+          </div>
 
           <h4>Intelligence</h4>
-          <%= char.intelligence %>
+          <div class="list-group">
+            <div class="list-group-item">
+              <h4><%= char.intelligenceMod %></h4>
+            </div>
+            <div class="list-group-item">
+              <p><%= char.intelligence %></p>
+            </div>
+          </div>
 
           <h4>Wisdom</h4>
-          <%= char.wisdom %>
+          <div class="list-group">
+            <div class="list-group-item">
+              <h4><%= char.wisdomMod %></h4>
+            </div>
+            <div class="list-group-item">
+              <p><%= char.wisdom %></p>
+            </div>
+          </div>
 
           <h4>Charisma</h4>
-          <%= char.charisma %>
-        </div> <!-- end panel body -->
-      </div> <!-- end panel -->
-
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <h4>Inspiration</h4>
-          <%= char.inspiration %>
-        </div> <!-- end panel body -->
-      </div> <!-- end panel -->
-
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <h4>Proficiency Bonus</h4>
-          <%= char.proficiencyBonus %>
-        </div> <!-- end panel body -->
-      </div> <!-- end panel -->
-
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="character-list-label">
-            <h4 class="center">Saving Throws</h4>
-
-
-            <h4>Strength</h4>
-            <%= char.savingStrength %>
-
-            <h4>Dexterity</h4>
-            <%= char.savingDexterity %>
-
-            <h4>Constitution</h4>
-            <%= char.savingConst %>
-
-            <h4>Intelligence</h4>
-            <%= char.savingIntelligence %>
-
-            <h4>Wisdom</h4>
-            <%= char.savingWisdom %>
-
-            <h4>Charisma</h4>
-            <%= char.savingCharisma %>
-
-          </div> <!-- end saving throws box -->
+          <div class="list-group">
+            <div class="list-group-item">
+              <h4><%= char.charismaMod %></h4>
+            </div>
+            <div class="list-group-item">
+              <p><%= char.charisma %></p>
+            </div>
+          </div>
         </div> <!-- end panel body -->
       </div> <!-- end panel -->
 
@@ -212,6 +213,8 @@
           </div> <!-- end skills box -->
         </div> <!-- end panel body -->
       </div> <!-- end panel -->
+
+
     </div> <!-- end column -->
 
     <!-- 3rd column -->
@@ -270,6 +273,26 @@
         </div> <!-- end panel body -->
       </div> <!-- end panel -->
 
+
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>Inspiration</h4>
+              <%= char.inspiration %>
+            </div> <!-- end panel body -->
+          </div> <!-- end panel -->
+        </div> <!-- end column -->
+        <div class="col-lg-7">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>Proficiency Bonus</h4>
+              <%= char.proficiencyBonus %>
+            </div> <!-- end panel body -->
+          </div> <!-- end panel -->
+        </div> <!-- end column -->
+      </div> <!-- end row -->
+
       <!-- attacks and spellcasting -->
       <div class="row">
         <div class="col-lg-12">
@@ -296,12 +319,47 @@
 
       <div class="row">
         <div class="col-lg-12">
+
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="character-list-label">
+                <h4 class="center">Saving Throws</h4>
+
+                <div class="row">
+                  <div class="col-lg-6">
+                    <h4>Strength</h4>
+                    <%= char.savingStrength %>
+
+                    <h4>Dexterity</h4>
+                    <%= char.savingDexterity %>
+
+                    <h4>Constitution</h4>
+                    <%= char.savingConst %>
+                  </div> <!-- end column -->
+                  <div class="col-lg-6">
+                    <h4>Intelligence</h4>
+                    <%= char.savingIntelligence %>
+
+                    <h4>Wisdom</h4>
+                    <%= char.savingWisdom %>
+
+                    <h4>Charisma</h4>
+                    <%= char.savingCharisma %>
+                  </div>  <!-- end column -->
+                </div> <!-- end row -->
+
+              </div> <!-- end saving throws box -->
+            </div> <!-- end panel body -->
+          </div> <!-- end panel -->
+
           <div class="panel panel-default">
             <div class="panel-body">
               <h4>Passive Wisdom (Perception)</h4>
               <%= char.perception %>
             </div> <!-- end panel-body -->
           </div> <!-- end panel -->
+
+
         </div> <!-- end column -->
       </div> <!-- end row -->
 
