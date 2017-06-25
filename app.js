@@ -75,6 +75,9 @@ app.use(characterRoute);
 
 const userRoutes = require('./routes/user-routes');
 app.use(userRoutes);
+
+const pdfRoutes = require('./routes/pdf-routes');
+app.use(pdfRoutes);
 // -----------------------------------------------
 // END ROUTES
 

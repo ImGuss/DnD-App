@@ -32,5 +32,8 @@ npm-debug.log
 # Environment Variables file
 .env
 
+#DS Store file
+.DS_Store
+
 # To Do List
 .todo
